@@ -82,9 +82,11 @@ MPLS-P4# ping 100.1.1.1
 
 Success rate is 100 percent (5/5),
 round-trip min/avg/max = 2/8/20 ms
+```
 
 Traceroute confirmed that traffic traversed the MPLS backbone:
 
+```text
 MPLS-P4# traceroute 100.1.1.1
 
 1  7.7.7.1 [MPLS: Label 38]
@@ -94,20 +96,24 @@ MPLS-P4# traceroute 100.1.1.1
    5.5.5.1
 
 3  100.1.1.1
+```
 
 The trace shows successful traversal from MPLS-P4 toward the PE side of the provider backbone.
 
-PE-ROUTER → MPLS-P4
+### PE-ROUTER → MPLS-P4
+
+```text
 PE-ROUTER# ping 2.2.2.4
 
 Success rate is 100 percent (5/5),
 round-trip min/avg/max = 1/2/4 ms
+```
 
 This confirms successful reverse-direction reachability from PE-ROUTER to the MPLS-P4 loopback.
 
-Current-state note: The lab has progressed beyond Phase 1. The current PE-ROUTER traceroute also exposes paths introduced in later phases. For this reason, the ping result is used as Phase 1 end-to-end reachability evidence, while the traceroute is treated as current-state path evidence.
+> **Current-state note:** The lab has progressed beyond Phase 1. The current PE-ROUTER traceroute also exposes paths introduced in later phases. For this reason, the ping result is used as Phase 1 end-to-end reachability evidence, while the traceroute is treated as current-state path evidence.
 
-Result
+### Result
 
 ✅ Bidirectional backbone reachability confirmed.
 
