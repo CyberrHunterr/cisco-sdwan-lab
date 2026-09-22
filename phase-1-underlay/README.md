@@ -17,7 +17,7 @@ The technical goals are:
 ## Full Lab Topology
 
 ![Cisco SD-WAN full lab topology](topology/full-lab-topology.png)
-> Phase 1 focuses on the underlay infrastructure: Internet Router, PE-ROUTER and the MPLS P1–P4 backbone. Controller, branch, data-center and vEdge components are shown only for full-lab context and are introduced in later phases.
+
 
 > **Scope note:** This image shows the full SD-WAN lab as it exists across later phases.  
 > Phase 1 focuses only on the underlay portion: Internet Router, PE-ROUTER and the MPLS P1–P4 backbone.  
