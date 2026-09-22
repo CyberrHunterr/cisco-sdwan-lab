@@ -91,10 +91,21 @@ This diagram intentionally shows only the **Phase 1 core links retained in the r
 
 ## Verification
 
-See:
+## Verification Results
 
-- [`verification/phase1-checklist.md`](verification/phase1-checklist.md)
-- [`verification/observed-core-state.md`](verification/observed-core-state.md)
+The Phase 1 underlay was validated through OSPF, LDP, MPLS forwarding and connectivity tests.
+
+| Validation | Status |
+|---|---|
+| OSPF adjacencies | ✅ Passed |
+| LDP sessions | ✅ Passed |
+| MPLS forwarding | ✅ Passed |
+| Internet reachability | ✅ Passed |
+| Default routing | ✅ Passed |
+
+See the complete verification results:
+
+➡️ [Phase 1 Verification Results](verification/observed-core-state.md)
 
 ## Important Scope Note
 
