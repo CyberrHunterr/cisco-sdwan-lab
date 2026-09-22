@@ -102,14 +102,14 @@ The Phase 1 underlay was validated through OSPF, LDP, MPLS forwarding and connec
 | Internet reachability | ✅ Passed |
 | Default routing | ✅ Passed |
 
-See the complete verification results:
+Detailed verification evidence:
 
 ➡️ [Phase 1 Verification Results](verification/observed-core-state.md)
 
-## Important Scope Note
+## Scope and Evidence Notes
 
-The live lab has progressed beyond Phase 1. Current devices therefore contain routes, interfaces, adjacencies and policies introduced later.
+The live lab has progressed beyond Phase 1. Current devices therefore contain routes, interfaces, adjacencies and policies introduced in later phases.
 
-The files here are intentionally filtered to show the Phase 1 underlay only.
+For this reason, the Phase 1 configuration files in this repository are reconstructed from original Phase 1 records and filtered current-state evidence. Later-phase configuration has been intentionally excluded.
 
 See [`docs/reconstruction-notes.md`](docs/reconstruction-notes.md) for the evidence and exclusion rules.
