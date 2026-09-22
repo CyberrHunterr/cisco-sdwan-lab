@@ -3,6 +3,7 @@
 This section summarizes the verification results for the Phase 1 underlay.
 
 Only Phase 1-relevant core adjacencies are included. Later-phase site and edge adjacencies have been intentionally excluded.
+> **Evidence note:** PE Router and Internet Router reachability results are based on original Phase 1 records. OSPF/LDP core states for MPLS-P1 through MPLS-P4 were verified from the current lab state and filtered to include only Phase 1-relevant backbone links.
 
 ## OSPF Core Adjacencies
 
@@ -49,52 +50,40 @@ Label      Label      or Tunnel Id
 18         Pop Label  2.2.2.4/32
 19         22         2.2.2.3/32
 36         Pop Label  2.2.2.1/32
-This confirms that MPLS labels were being exchanged and installed for remote core loopbacks.
+```
 
-Internet Reachability
+This confirms that MPLS labels are being exchanged and installed for remote core loopbacks. Label values are dynamic and the example reflects the observed lab state.
+
+## Internet Reachability
 
 The Internet Router was validated against the PE router.
 
+```text
 internet# ping 100.2.1.1
 
 Success rate is 100 percent (5/5)
+```
 
 ✅ PE-ROUTER was reachable from the Internet Router.
 
 The PE router default route was also verified:
 
+```text
 S* 0.0.0.0/0 via 100.2.1.2
-Phase 1 Validation Summary
-Test	Result
-Interface status	✅ Passed
-OSPF core adjacency	✅ Passed
-LDP adjacency	✅ Passed
-MPLS operational state	✅ Passed
-MPLS forwarding labels	✅ Passed
-PE ↔ Internet Router reachability	✅ Passed
-Default route validation	✅ Passed
-Result
+```
 
-Phase 1 underlay validation completed successfully.
+## Phase 1 Validation Summary
 
-
-Sonra commit et.
-
-Ardından `phase-1-underlay/README.md` içindeki mevcut **Verification** bölümünü bulup bunu yapıştır:
-
-```markdown
-## Verification Results
-
-The Phase 1 underlay was validated through OSPF, LDP, MPLS forwarding and connectivity tests.
-
-| Validation | Status |
+| Test | Result |
 |---|---|
-| OSPF adjacencies | ✅ Passed |
-| LDP sessions | ✅ Passed |
-| MPLS forwarding | ✅ Passed |
-| Internet reachability | ✅ Passed |
-| Default routing | ✅ Passed |
+| Interface status | ✅ Passed |
+| OSPF core adjacency | ✅ Passed |
+| LDP adjacency | ✅ Passed |
+| MPLS operational state | ✅ Passed |
+| MPLS forwarding labels | ✅ Passed |
+| PE ↔ Internet Router reachability | ✅ Passed |
+| Default route validation | ✅ Passed |
 
-See the complete verification results:
+### Result
 
-➡️ [Phase 1 Verification Results](verification/observed-core-state.md)
+**Phase 1 underlay validation completed successfully.**
