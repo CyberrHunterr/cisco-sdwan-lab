@@ -89,7 +89,6 @@ This diagram intentionally shows only the **Phase 1 core links retained in the r
 - [`configs/MPLS-P3.cfg`](configs/MPLS-P3.cfg)
 - [`configs/MPLS-P4.cfg`](configs/MPLS-P4.cfg)
 
-## Verification
 
 ## Verification Results
 
