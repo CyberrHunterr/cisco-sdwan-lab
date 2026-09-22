@@ -71,6 +71,45 @@ The PE router default route was also verified:
 ```text
 S* 0.0.0.0/0 via 100.2.1.2
 ```
+## End-to-End Backbone Validation
+
+End-to-end reachability across the MPLS backbone was validated in both directions.
+
+### MPLS-P4 → PE-ROUTER
+
+```text
+MPLS-P4# ping 100.1.1.1
+
+Success rate is 100 percent (5/5),
+round-trip min/avg/max = 2/8/20 ms
+
+Traceroute confirmed that traffic traversed the MPLS backbone:
+
+MPLS-P4# traceroute 100.1.1.1
+
+1  7.7.7.1 [MPLS: Label 38]
+   8.8.8.1 [MPLS: Label 34]
+
+2  6.6.6.1
+   5.5.5.1
+
+3  100.1.1.1
+
+The trace shows successful traversal from MPLS-P4 toward the PE side of the provider backbone.
+
+PE-ROUTER → MPLS-P4
+PE-ROUTER# ping 2.2.2.4
+
+Success rate is 100 percent (5/5),
+round-trip min/avg/max = 1/2/4 ms
+
+This confirms successful reverse-direction reachability from PE-ROUTER to the MPLS-P4 loopback.
+
+Current-state note: The lab has progressed beyond Phase 1. The current PE-ROUTER traceroute also exposes paths introduced in later phases. For this reason, the ping result is used as Phase 1 end-to-end reachability evidence, while the traceroute is treated as current-state path evidence.
+
+Result
+
+✅ Bidirectional backbone reachability confirmed.
 
 ## Phase 1 Validation Summary
 
@@ -83,6 +122,7 @@ S* 0.0.0.0/0 via 100.2.1.2
 | MPLS forwarding labels | ✅ Passed |
 | PE ↔ Internet Router reachability | ✅ Passed |
 | Default route validation | ✅ Passed |
+| End-to-end backbone reachability | ✅ Passed |
 
 ### Result
 
