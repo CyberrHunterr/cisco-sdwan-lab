@@ -1,0 +1,11 @@
+vManage# ping 100.10.1.10
+4 packets transmitted, 4 received, 0% packet loss
+
+vManage# ping 100.10.1.12
+4 packets transmitted, 4 received, 0% packet loss
+
+vManage# ping 100.10.1.13
+5 packets transmitted, 5 received, 0% packet loss
+
+vManage# ping 100.10.1.14
+5 packets transmitted, 5 received, 0% packet loss
