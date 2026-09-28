@@ -1,0 +1,5 @@
+vSmart2# ping 100.10.1.10
+3 packets transmitted, 3 received, 0% packet loss
+
+vSmart2# ping 100.10.1.12
+4 packets transmitted, 4 received, 0% packet loss
