@@ -63,8 +63,11 @@ The lab has progressed beyond the earlier phases, so current device state can co
 Each phase therefore separates:
 
 1. phase-specific configuration and workflow,
-2. current live evidence that still verifies the phase objective,
-3. later-phase state that must be excluded from that phase's acceptance criteria.
+2. summarized/normalized verification,
+3. preserved raw CLI evidence under `verification/raw/` where available,
+4. later-phase state that must be excluded from that phase's acceptance criteria.
+
+Raw evidence is never invented. If an original terminal capture was not preserved as text, the repository keeps the available historical report or exact preserved excerpt instead of recreating a fake CLI output.
 
 Secrets, password hashes, private keys and other sensitive authentication material are intentionally excluded from the public repository.
 
