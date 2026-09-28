@@ -1,0 +1,67 @@
+vbond# show control local-properties
+personality                       vedge
+sp-organization-name              appbee-sdwan-project
+organization-name                 appbee-sdwan-project
+root-ca-chain-status              Installed
+root-ca-crl-status                Installed
+
+certificate-status                Installed
+certificate-validity              Valid
+certificate-not-valid-before      Aug 13 18:12:31 2026 GMT
+certificate-not-valid-after       Aug 13 18:12:31 2027 GMT
+
+dns-name                          100.10.1.12
+site-id                           10
+domain-id                         1
+protocol                          dtls
+tls-port                          0
+system-ip                         55.55.10.2
+chassis-num/unique-id             7d71ee49-e2e7-4dd6-9c04-cef5913482db
+serial-num                        05
+subject-serial-num                N/A
+token                             Invalid
+keygen-interval                   1:00:00:00
+retry-interval                    0:00:00:18
+no-activity-exp-interval          0:00:00:20
+dns-cache-ttl                     0:00:00:00
+port-hopped                       FALSE
+time-since-last-port-hop          0:00:00:00
+pairwise-keying                   Disabled
+embargo-check                     success
+cdb-locked                        false
+device-role                       edge-router
+region-id-set                     N/A
+number-vbond-peers                0
+number-active-wan-interfaces      1
+
+vbond# show certificate root-ca-cert
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number: 1 (0x1)
+        Signature Algorithm: sha256WithRSAEncryption
+        Issuer: CN=rootca.lab.local
+        Validity
+            Not Before: Aug 11 19:28:20 2026 GMT
+            Not After : Aug 10 19:28:20 2029 GMT
+        Subject: CN=rootca.lab.local
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+                RSA Public-Key: (2048 bit)
+        X509v3 extensions:
+            X509v3 Basic Constraints: critical
+                CA:TRUE
+            X509v3 Key Usage: critical
+                Digital Signature, Certificate Sign, CRL Sign
+
+vbond# show orchestrator connections
+                                                                                     PEER                      PEER
+         PEER     PEER     PEER             SITE        DOMAIN      PEER             PRIVATE  PEER             PUBLIC                                   ORGANIZATION
+INSTANCE TYPE     PROTOCOL SYSTEM IP        ID          ID          PRIVATE IP       PORT     PUBLIC IP        PORT    REMOTE COLOR     STATE           NAME                    UPTIME
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+0        vsmart   dtls     55.55.10.3       10          1           100.10.1.13      12346    100.10.1.13      12346   default          up              appbee-sdwan-project    1:20:01:37
+0        vsmart   dtls     55.55.10.4       10          1           100.10.1.14      12346    100.10.1.14      12346   default          up              appbee-sdwan-project    1:20:01:38
+0        vmanage  dtls     55.55.10.1       10          0           100.10.1.11      12346    100.10.1.11      12346   default          up              appbee-sdwan-project    1:20:01:16
+0        vmanage  dtls     55.55.10.1       10          0           100.10.1.11      12446    100.10.1.11      12446   default          up              appbee-sdwan-project    1:20:01:24
+0        vmanage  dtls     55.55.10.1       10          0           100.10.1.11      12546    100.10.1.11      12546   default          up              appbee-sdwan-project    1:20:01:24
+0        vmanage  dtls     55.55.10.1       10          0           100.10.1.11      12646    100.10.1.11      12646   default          up              appbee-sdwan-project    1:20:01:23
