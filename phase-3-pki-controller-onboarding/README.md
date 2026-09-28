@@ -35,9 +35,15 @@ The Root CA used for the lab is based on IOS and uses:
 | Root certificate file | PKI.ca |
 | Distribution | TFTP |
 
-Public CA configuration:
+Phase-specific configuration / onboarding command files:
 
-➡️ [configs/root-ca.cfg](configs/root-ca.cfg)
+- [configs/root-ca.cfg](configs/root-ca.cfg)
+- [configs/vManage-pki.cfg](configs/vManage-pki.cfg)
+- [configs/vBond-pki.cfg](configs/vBond-pki.cfg)
+- [configs/vSmart1-pki.cfg](configs/vSmart1-pki.cfg)
+- [configs/vSmart2-pki.cfg](configs/vSmart2-pki.cfg)
+
+The controller files contain the Phase 3 PKI/onboarding commands and GUI workflow notes rather than duplicating the full Phase 2 base configurations.
 
 Sensitive archive passwords and private-key material are intentionally not published.
 
