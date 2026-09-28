@@ -108,6 +108,10 @@ Detailed evidence:
 
 ➡️ [verification/observed-controller-state.md](verification/observed-controller-state.md)
 
+Raw CLI captures:
+
+➡️ [verification/raw/](verification/raw/)
+
 Completion checklist:
 
 ➡️ [verification/phase3-checklist.md](verification/phase3-checklist.md)
