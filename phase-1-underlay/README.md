@@ -106,6 +106,10 @@ Detailed verification evidence:
 
 ➡️ [Phase 1 Verification Results](verification/observed-core-state.md)
 
+Raw CLI evidence:
+
+➡️ [verification/raw/](verification/raw/)
+
 ## Scope and Evidence Notes
 
 The live lab has progressed beyond Phase 1. Current devices therefore contain routes, interfaces, adjacencies and policies introduced in later phases.
