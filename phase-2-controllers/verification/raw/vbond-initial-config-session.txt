@@ -1,0 +1,27 @@
+viptela 19.3.0
+vedge login: admin
+Password:
+Welcome to Viptela CLI
+admin connected from 127.0.0.1 using console on vedge
+You must set an initial admin password.
+
+vedge(config)#system
+vedge(config-system)#host-name vBond
+vedge(config-system)#system-ip 55.55.10.2
+vedge(config-system)#site-id 10
+vedge(config-system)#organization-name appbee-sdwan-project
+vedge(config-system)#vbond 100.10.1.12 local
+vedge(config-system)#exit
+vedge(config)#vpn 0
+vedge(config-vpn-0)#ip route 0.0.0.0/0 100.10.1.254
+vedge(config-vpn-0)#interface ge0/0
+vedge(config-interface-ge0/0)#ip address 100.10.1.12/24
+vedge(config-interface-ge0/0)#tunnel-interface
+vedge(config-tunnel-interface)#encapsulation ipsec
+vedge(config-tunnel-interface)#allow-service all
+vedge(config-tunnel-interface)#no shutdown
+vedge(config-tunnel-interface)#exit
+vedge(config-interface-ge0/0)#exit
+vedge(config-vpn-0)#exit
+vedge(config)#commit
+Commit complete.
