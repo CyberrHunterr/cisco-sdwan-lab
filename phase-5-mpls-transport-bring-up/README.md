@@ -43,6 +43,25 @@ Accordingly, Phase 5 is documented as:
 - [verification/phase5-checklist.md](verification/phase5-checklist.md)
 - [verification/raw/](verification/raw/)
 
-## Configuration notes
+## Configuration set
 
-The phase-specific examples are documented under [configs/](configs/). These are normalized configuration snippets based on the lab workflow, not fabricated full running-config captures.
+The complete Phase 5 configuration set is documented under [configs/](configs/):
+
+### Backbone
+- PE Router point-to-point OSPF
+- MPLS-P1 point-to-point OSPF
+- MPLS-P4 point-to-point OSPF
+- Internet Router ↔ MPLS-P3 3.3.3.0/30 OSPF interconnect
+
+### vEdges
+- vEdge-DRC-Cyber2
+- vEdge-DC-DCI
+- vEdge-PRS1
+- vEdge-PRS2
+- vEdge-PRS3
+- vEdge-LDN1
+- vEdge-LDN2
+
+These are normalized phase-specific snippets supported by the guide and preserved screenshots, not fabricated full running-config captures.
+
+The task heading references MPLS-P2, but the supplied guide does not provide a specific MPLS-P2 interface mapping for this change, so no unsupported MPLS-P2 config is invented.
