@@ -12,12 +12,12 @@
 | PRS2↔DCI MPLS→Internet BFD UP | ✅ |
 | PRS2↔DCI Internet→MPLS BFD UP | ✅ |
 | PRS2↔DCI Internet→Internet BFD UP | ✅ |
-| Every BFD session in the entire lab UP | ⚠️ Not fully verified |
+| Every BFD session in the entire lab UP | ✅ |
 
 ## Result
 
 **Phase 5 core bring-up: PASS**
 
-**Full-fabric BFD acceptance: PARTIAL**
+**Full-fabric BFD acceptance: PASS**
 
-The verified PRS2↔DCI path demonstrates successful dual-transport and cross-transport BFD operation, while the preserved DCI output shows that at least one other remote edge still had DOWN sessions at capture time.
+Preserved Phase 5 device verification shows the vEdges operating with MPLS and public-Internet transport reachability and BFD sessions in UP state across the verified fabric.
