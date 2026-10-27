@@ -1,0 +1,78 @@
+DEVICE: vEdge-DC-DCI
+PHASE: 6
+STATE: post-template-push verification
+
+show system status
+
+System state:            GREEN. All daemons up
+Personality:             vedge
+Model name:              vedge-cloud
+vManaged:                true
+Commit pending:          false
+Configuration template:  WG3-vEdge-Template
+
+show running-config system
+
+host-name               vEdge-DC-DCI
+system-ip               55.55.55.30
+site-id                 30
+sp-organization-name    appbee-sdwan-project
+organization-name       appbee-sdwan-project
+vbond                   100.10.1.12
+
+show running-config vpn 0
+
+router ospf
+ router-id 55.55.55.30
+ timers spf 200 1000 10000
+ area 0
+  interface ge0/1
+   network point-to-point
+
+interface ge0/0
+ ip address 30.2.1.1/24
+ tunnel-interface
+  encapsulation ipsec
+  color public-internet
+  allow-service all
+ no shutdown
+
+interface ge0/1
+ ip address 30.1.1.1/24
+ tunnel-interface
+  encapsulation ipsec
+  color mpls
+  allow-service all
+ no shutdown
+
+ip route 0.0.0.0/0 30.2.1.2
+
+show control connections
+
+vSmart 55.55.10.3 / mpls / UP
+vSmart 55.55.10.4 / mpls / UP
+vSmart 55.55.10.3 / public-internet / UP
+vSmart 55.55.10.4 / public-internet / UP
+vManage 55.55.10.1 / public-internet / UP
+
+show bfd sessions
+
+Peer 55.55.55.20: verified UP
+Peer 55.55.55.40: verified UP
+Peer 55.55.55.41: verified UP
+Peer 55.55.55.50: verified UP
+Peer 55.55.55.51: verified UP
+Peer 55.55.55.52: verified UP
+
+show omp peers
+
+55.55.10.3 / vsmart / UP
+55.55.10.4 / vsmart / UP
+
+show ospf neighbor
+
+VPN 0:
+30.1.1.2 / ge0/1 / router-id 2.2.2.1 / FULL
+
+NOTE:
+A later Service VPN OSPF neighbor is visible in the current device state but is not used as Phase 6 acceptance evidence.
