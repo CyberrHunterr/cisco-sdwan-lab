@@ -40,15 +40,35 @@ The preserved CLI evidence confirms:
 
 ## GUI evidence
 
-The following GUI screenshots should be added under `verification/images/`:
+### Feature Templates
 
-- `feature-template-list.png`
-- `device-template.png`
-- `device-specific-values.png`
-- `push-success.png`
-- `devices-in-sync.png`
+![Feature Template list](verification/images/feature-template-list.png)
 
-Once uploaded, they document the complete Feature Template → Device Template → Attach → Push → In Sync workflow.
+The Feature Template list shows the system templates together with VPN 0, Internet, MPLS, OSPF and VPN 512 templates used by the Device Template.
+
+### Device Template
+
+![Device Template](verification/images/device-template.png)
+
+The Device Template is present and its template status is **In Sync**.
+
+### Device Specific values
+
+![Device Specific values](verification/images/device-specific-values.png)
+
+The attachment workflow preserves the target device values, including system IP, hostname, site ID, transport interface IPs/colors and OSPF router ID.
+
+### Push success
+
+![Push success](verification/images/push-success.png)
+
+The vManage task shows the template configuration push completed with **Success** for vEdge-DC-DCI.
+
+### Device assignment
+
+![vEdge-DC-DCI assigned template](verification/images/devices-in-sync.png)
+
+The WAN Edge device list shows vEdge-DC-DCI in **vManage** mode with **WG3-vEdge-Template** assigned, while the other lab edges remain CLI-managed.
 
 ## Evidence
 
@@ -61,3 +81,5 @@ Once uploaded, they document the complete Feature Template → Device Template �
 Phase 6 focuses on centralized template management. Service VPN work belongs to Phase 7 and later.
 
 Any later Service VPN state visible in current CLI output is not used as a Phase 6 acceptance criterion.
+
+**Phase 6 status: ✅ Complete**
