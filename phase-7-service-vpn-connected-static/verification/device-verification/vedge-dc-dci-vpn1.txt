@@ -1,0 +1,57 @@
+DEVICE: vEdge-DC-DCI
+SYSTEM-IP: 55.55.55.30
+METHOD: vManage Template
+
+show running-config vpn 1
+
+vpn 1
+ interface ge0/3
+  ip address 172.16.31.1/24
+  no shutdown
+ !
+ ip route 192.168.31.0/24 172.16.31.2
+ ip route 192.168.32.0/24 172.16.31.2
+ ip route 192.168.33.0/24 172.16.31.2
+ omp
+  advertise connected
+ !
+!
+
+show ip route vpn 1 — key verified routes
+
+172.16.21.0/24   omp         55.55.55.20 / mpls + public-internet
+172.16.31.0/24   connected   ge0/3
+
+192.168.21.0/24  omp         55.55.55.20 / mpls + public-internet
+192.168.22.0/24  omp         55.55.55.20 / mpls + public-internet
+192.168.23.0/24  omp         55.55.55.20 / mpls + public-internet
+
+192.168.31.0/24  static      172.16.31.2
+192.168.32.0/24  static      172.16.31.2
+192.168.33.0/24  static      172.16.31.2
+
+show omp peers
+
+55.55.10.3 / vSmart / UP
+55.55.10.4 / vSmart / UP
+
+show omp routes vpn 1 — key verification
+
+172.16.21.0/24:
+ originator 55.55.55.20
+ origin-proto connected
+ received over MPLS and public-internet TLOCs
+
+192.168.21.0/24:
+ originator 55.55.55.20
+ origin-proto static
+ received over MPLS and public-internet TLOCs
+
+ping vpn 1 172.16.21.1
+
+9 packets transmitted, 8 received, 11% packet loss
+rtt min/avg/max/mdev = 41.242/43.726/48.547/2.653 ms
+
+traceroute vpn 1 172.16.21.1
+
+1 172.16.21.1 42.000 ms 52.228 ms 51.443 ms
