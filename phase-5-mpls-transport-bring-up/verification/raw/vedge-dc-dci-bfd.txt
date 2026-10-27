@@ -1,0 +1,25 @@
+vEdge-DC-DCI# show bfd session
+
+SYSTEM IP     SITE ID STATE SOURCE TLOC      REMOTE TLOC       SOURCE IP  DST PUBLIC IP  PORT   ENCAP
+55.55.55.40   40      down  mpls             mpls              30.1.1.1   40.1.1.1       12346  ipsec
+55.55.55.40   40      down  mpls             public-internet   30.1.1.1   40.2.1.1       12346  ipsec
+55.55.55.40   40      down  public-internet  mpls              30.2.1.1   40.1.1.1       12346  ipsec
+55.55.55.40   40      down  public-internet  public-internet   30.2.1.1   40.2.1.1       12346  ipsec
+
+55.55.55.41   40      up    mpls             public-internet   30.1.1.1   40.2.2.1       12346  ipsec
+55.55.55.41   40      up    public-internet  public-internet   30.2.1.1   40.2.2.1       12346  ipsec
+
+55.55.55.50   50      up    mpls             mpls              30.1.1.1   50.1.1.1       12346  ipsec
+55.55.55.50   50      up    mpls             public-internet   30.1.1.1   50.2.1.1       12346  ipsec
+55.55.55.50   50      up    public-internet  mpls              30.2.1.1   50.1.1.1       12346  ipsec
+55.55.55.50   50      up    public-internet  public-internet   30.2.1.1   50.2.1.1       12346  ipsec
+
+55.55.55.51   50      up    mpls             mpls              30.1.1.1   50.1.2.1       12386  ipsec
+55.55.55.51   50      up    mpls             public-internet   30.1.1.1   50.2.2.1       12386  ipsec
+55.55.55.51   50      up    public-internet  mpls              30.2.1.1   50.1.2.1       12386  ipsec
+55.55.55.51   50      up    public-internet  public-internet   30.2.1.1   50.2.2.1       12386  ipsec
+
+55.55.55.52   50      up    mpls             mpls              30.1.1.1   50.1.3.1       12346  ipsec
+55.55.55.52   50      up    mpls             public-internet   30.1.1.1   50.2.3.1       12346  ipsec
+55.55.55.52   50      up    public-internet  mpls              30.2.1.1   50.1.3.1       12346  ipsec
+55.55.55.52   50      up    public-internet  public-internet   30.2.1.1   50.2.3.1       12346  ipsec
