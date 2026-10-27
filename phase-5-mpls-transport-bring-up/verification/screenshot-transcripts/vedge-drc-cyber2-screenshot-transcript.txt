@@ -1,0 +1,29 @@
+SOURCE: preserved Phase 5 screenshots
+DEVICE: vEdge-DRC-Cyber2
+SYSTEM-IP: 55.55.55.20
+
+show ospf neighbor
+VPN  SOURCE IP   INTERFACE  ROUTER ID  STATE  PRIORITY
+0    20.1.1.2    ge0/0      2.2.2.1    full   1
+
+show ip route — verified MPLS/OSPF state
+Default route: 0.0.0.0/0 static via ge0/1 -> 20.2.1.2
+MPLS OSPF next-hop observed: 20.1.1.2
+3.3.3.0/30 is learned through OSPF.
+100.10.1.0/24 is learned through OSPF.
+Connected system route: 55.55.55.20/32
+
+show control connections — verified UP
+vSmart 55.55.10.3 / mpls / up
+vSmart 55.55.10.4 / mpls / up
+vSmart 55.55.10.3 / public-internet / up
+vSmart 55.55.10.4 / public-internet / up
+vManage 55.55.10.1 / public-internet / up
+
+show bfd sessions — screenshot-visible peers
+Peer 55.55.55.30: all four MPLS/Internet TLOC combinations UP
+Peer 55.55.55.40: all four MPLS/Internet TLOC combinations UP
+Peer 55.55.55.41: all four MPLS/Internet TLOC combinations UP
+Peer 55.55.55.50: all four MPLS/Internet TLOC combinations UP
+Peer 55.55.55.51: all four MPLS/Internet TLOC combinations UP
+Peer 55.55.55.52: all four MPLS/Internet TLOC combinations UP
