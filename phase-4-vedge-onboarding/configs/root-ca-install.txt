@@ -1,0 +1,12 @@
+# Phase 4 — Root CA installation
+
+# Preferred download workflow
+request download tftp://100.10.1.100/PKI.ca
+
+# Alternative workflow when direct download is unavailable
+vshell
+tftp -g -r PKI.ca 100.10.1.100
+exit
+
+# Install the Root CA trust chain
+request root-cert-chain install home/admin/PKI.ca
