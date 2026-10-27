@@ -1,0 +1,30 @@
+MPLS-P3# show ip ospf neighbor
+
+Neighbor ID     Pri   State           Dead Time   Address         Interface
+3.3.3.3           0   FULL/  -        00:00:32    3.3.3.1         Ethernet0/2
+2.2.2.1           1   FULL/BDR        00:00:34    6.6.6.1         Ethernet0/1
+2.2.2.4           1   FULL/DR         00:00:32    8.8.8.2         Ethernet0/0
+
+MPLS-P3# show ip route
+
+Gateway of last resort is not set
+
+O        1.1.1.0 [110/30] via 6.6.6.1, Ethernet0/1
+                 [110/30] via 3.3.3.1, Ethernet0/2
+O        2.2.2.1 [110/11] via 6.6.6.1, Ethernet0/1
+O        2.2.2.2 [110/21] via 8.8.8.2, Ethernet0/0
+                 [110/21] via 6.6.6.1, Ethernet0/1
+C        2.2.2.3 is directly connected, Loopback0
+O        2.2.2.4 [110/11] via 8.8.8.2, Ethernet0/0
+C        3.3.3.0/30 is directly connected, Ethernet0/2
+L        3.3.3.2/32 is directly connected, Ethernet0/2
+O        20.2.1.0 [110/20] via 3.3.3.1, Ethernet0/2
+O        30.2.1.0 [110/20] via 3.3.3.1, Ethernet0/2
+O        40.2.1.0 [110/20] via 3.3.3.1, Ethernet0/2
+O        40.2.2.0 [110/20] via 3.3.3.1, Ethernet0/2
+O        50.2.1.0 [110/20] via 3.3.3.1, Ethernet0/2
+O        50.2.2.0 [110/20] via 3.3.3.1, Ethernet0/2
+O        50.2.3.0 [110/20] via 3.3.3.1, Ethernet0/2
+O        100.2.1.0 [110/20] via 3.3.3.1, Ethernet0/2
+O        100.10.1.0 [110/30] via 6.6.6.1, Ethernet0/1
+                    [110/30] via 3.3.3.1, Ethernet0/2
