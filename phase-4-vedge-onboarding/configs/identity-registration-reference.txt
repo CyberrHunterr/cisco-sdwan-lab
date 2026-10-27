@@ -1,0 +1,13 @@
+# Phase 4 — vEdge identity reference
+
+DEVICE: vEdge-PRS2
+SYSTEM-IP: 55.55.55.51
+SITE-ID: 50
+ORGANIZATION: appbee-sdwan-project
+VBOND: 100.10.1.12
+
+CHASSIS-ID: dfb08239-7aff-43eb-a6d3-92eb3c4cdfd9
+CERTIFICATE-SERIAL: 09
+
+# These values are preserved as the verified identity used for controller registration.
+# Exact controller-side registration commands are not reproduced here unless preserved in source evidence.
