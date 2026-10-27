@@ -1,0 +1,12 @@
+# Phase 4 — Onboarding verification commands
+
+# On vEdge
+show control local-properties
+show certificate serial
+show certificate root-ca-cert
+show certificate installed
+show control connections
+
+# On vSmart
+show omp peers
+show control connections
