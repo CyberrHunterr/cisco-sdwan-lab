@@ -1,0 +1,165 @@
+vEdge-PRS2# show running-config system
+system
+ host-name               vEdge-PRS2
+ system-ip               55.55.55.51
+ site-id                 50
+ admin-tech-on-failure
+ no route-consistency-check
+ no vrrp-advt-with-phymac
+ sp-organization-name    appbee-sdwan-project
+ organization-name       appbee-sdwan-project
+ vbond 100.10.1.12
+ aaa
+  auth-order local radius tacacs
+  ...
+  user admin
+   <password-hash-redacted>
+  !
+ !
+!
+
+vEdge-PRS2# show running-config vpn 0
+vpn 0
+ router
+  ospf
+   router-id 55.55.55.51
+   timers spf 200 1000 10000
+   area 0
+    interface ge0/0
+     network point-to-point
+    exit
+   exit
+  !
+ !
+ interface ge0/0
+  ip address 50.1.2.1/24
+  tunnel-interface
+   encapsulation ipsec
+   color mpls
+   no allow-service bgp
+   allow-service dhcp
+   allow-service dns
+   allow-service icmp
+   no allow-service sshd
+   allow-service netconf
+   no allow-service ntp
+   allow-service ospf
+   no allow-service stun
+   allow-service https
+  !
+  no shutdown
+ !
+ interface ge0/1
+  ip address 50.2.2.1/24
+  tunnel-interface
+   encapsulation ipsec
+   color public-internet
+   no allow-service bgp
+   allow-service dhcp
+   allow-service dns
+   allow-service icmp
+   no allow-service sshd
+   no allow-service netconf
+   no allow-service ntp
+   no allow-service ospf
+   no allow-service stun
+   allow-service https
+  !
+  no shutdown
+ !
+ ip route 0.0.0.0/0 50.2.2.2
+!
+
+NOTE: The OSPF block above is later Phase 5 state preserved in this raw current-state capture.
+
+vEdge-PRS2# show running-config vpn 512
+vpn 512
+ interface eth0
+  ip dhcp-client
+  no shutdown
+ !
+!
+
+vEdge-PRS2# show control local-properties
+personality                       vedge
+sp-organization-name              appbee-sdwan-project
+organization-name                 appbee-sdwan-project
+root-ca-chain-status              Installed
+root-ca-crl-status                Not-Installed
+certificate-status                Installed
+certificate-validity              Valid
+certificate-not-valid-before      Aug 17 18:30:52 2026 GMT
+certificate-not-valid-after       Aug 17 18:30:52 2027 GMT
+dns-name                          100.10.1.12
+site-id                           50
+domain-id                         1
+protocol                          dtls
+system-ip                         55.55.55.51
+chassis-num/unique-id             dfb08239-7aff-43eb-a6d3-92eb3c4cdfd9
+serial-num                        09
+device-role                       edge-router
+number-vbond-peers                1
+
+INDEX   IP                                      PORT
+-----------------------------------------------------
+0       100.10.1.12                             12346
+
+number-active-wan-interfaces      2
+
+INTERFACE   PUBLIC IPv4   PRIVATE IPv4   COLOR            STATE
+----------------------------------------------------------------
+ge0/0       50.1.2.1      50.1.2.1       mpls             up
+ge0/1       50.2.2.1      50.2.2.1       public-internet  up
+
+vEdge-PRS2# show certificate serial
+Chassis number: dfb08239-7aff-43eb-a6d3-92eb3c4cdfd9 serial number: 09
+
+vEdge-PRS2# show certificate root-ca-cert
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number: 1 (0x1)
+        Signature Algorithm: sha256WithRSAEncryption
+        Issuer: CN=rootca.lab.local
+        Validity
+            Not Before: Aug 11 19:28:20 2026 GMT
+            Not After : Aug 10 19:28:20 2029 GMT
+        Subject: CN=rootca.lab.local
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+            RSA Public-Key: (2048 bit)
+        X509v3 extensions:
+            X509v3 Basic Constraints: critical
+                CA:TRUE
+            X509v3 Key Usage: critical
+                Digital Signature, Certificate Sign, CRL Sign
+
+vEdge-PRS2# show certificate installed
+Installed device certificates
+-----------------------------
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number: 9 (0x9)
+        Signature Algorithm: sha256WithRSAEncryption
+        Issuer: CN=rootca.lab.local
+        Validity
+            Not Before: Aug 17 18:30:52 2026 GMT
+            Not After : Aug 17 18:30:52 2027 GMT
+        Subject: C=US, ST=California, L=San Jose, OU=appbee-sdwan-project, O=Viptela LLC, CN=vedge-dfb08239-7aff-43eb-a6d3-92eb3c4cdfd9-0.viptela.com/emailAddress=support@viptela.com
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+            RSA Public-Key: (2048 bit)
+
+vEdge-PRS2# show control connections
+PEER    PEER PEER            SITE  DOMAIN PEER          PEER          ORGANIZATION          LOCAL COLOR      STATE
+TYPE    PROT SYSTEM IP       ID    ID     PRIVATE IP    PUBLIC IP
+---------------------------------------------------------------------------------------------------------------
+vsmart  dtls 55.55.10.3      10    1      100.10.1.13   100.10.1.13   appbee-sdwan-project  mpls             up
+vsmart  dtls 55.55.10.4      10    1      100.10.1.14   100.10.1.14   appbee-sdwan-project  mpls             up
+vsmart  dtls 55.55.10.3      10    1      100.10.1.13   100.10.1.13   appbee-sdwan-project  public-internet  up
+vsmart  dtls 55.55.10.4      10    1      100.10.1.14   100.10.1.14   appbee-sdwan-project  public-internet  up
+vmanage dtls 55.55.10.1      10    0      100.10.1.11   100.10.1.11   appbee-sdwan-project  public-internet  up
+
+Earlier during the same bring-up window, vBond over public Internet was also observed:
+vbond   dtls 0.0.0.0         0     0      100.10.1.12   100.10.1.12   appbee-sdwan-project  public-internet  up
