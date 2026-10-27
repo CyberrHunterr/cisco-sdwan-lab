@@ -18,8 +18,9 @@ The repository is organized by phase. Each phase separates:
 | Phase 1 | Underlay, OSPF, MPLS/LDP, Internet reachability | ✅ Complete |
 | Phase 2 | vBond, vSmart, vManage controller deployment | ✅ Complete |
 | Phase 3 | PKI, Root CA, controller onboarding | ✅ Complete |
-| Phase 4 | vEdge certificate installation and onboarding | Planned |
-| Later phases | Transport and additional SD-WAN functions | Planned |
+| Phase 4 | vEdge certificate installation and onboarding | ✅ Complete |
+| Phase 5 | MPLS transport bring-up, OSPF and BFD verification | Planned |
+| Later phases | vManage templates and additional SD-WAN functions | Planned |
 
 ## Phase 1 — Underlay Infrastructure
 
@@ -55,6 +56,18 @@ Open [phase-3-pki-controller-onboarding/](phase-3-pki-controller-onboarding/) fo
 - vSmart1 and vSmart2 identity certificate onboarding,
 - controller certificate-state validation,
 - DTLS controller-to-controller verification.
+
+## Phase 4 — vEdge Certificate Installation and Onboarding
+
+Open [phase-4-vedge-onboarding/](phase-4-vedge-onboarding/) for:
+
+- vEdge system and transport baseline,
+- Root CA installation,
+- CSR / identity-certificate workflow,
+- chassis and serial registration,
+- live controller-connection verification,
+- OMP peer verification,
+- preserved raw vEdge and vSmart CLI evidence.
 
 ## Evidence Policy
 
