@@ -9,6 +9,8 @@
 | Template push completed successfully | ✅ |
 | Device is vManage-managed | ✅ |
 | Configuration template = WG3-vEdge-Template | ✅ |
+| Device Template status In Sync | ✅ |
+| Assigned template visible on vEdge-DC-DCI | ✅ |
 | System state GREEN | ✅ |
 | Commit pending = false | ✅ |
 | System identity preserved | ✅ |
@@ -18,10 +20,11 @@
 | BFD sessions UP | ✅ |
 | OMP peers UP | ✅ |
 | MPLS OSPF neighbor FULL | ✅ |
-| Device In Sync in vManage | ⬜ GUI evidence to add |
 
 ## Result
 
+**GUI workflow validation: PASS**
+
 **CLI post-push validation: PASS**
 
-Final GUI evidence should confirm the Device Template attachment and In Sync state.
+**Phase 6 acceptance: PASS**
