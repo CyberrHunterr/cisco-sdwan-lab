@@ -42,6 +42,24 @@ See:
 - [verification/phase4-checklist.md](verification/phase4-checklist.md)
 - [verification/raw/](verification/raw/)
 
+## GUI evidence
+
+### vManage registration success
+
+![vManage registration success](verification/images/vmanage-registration.png)
+
+### vBond registration success
+
+![vBond registration success](verification/images/vbond-registration.png)
+
+### WAN Edge certificates
+
+![WAN Edge certificates](verification/images/wan-edge-certificates.png)
+
+### Controller inventory
+
+![Controller inventory](verification/images/controller-inventory.png)
+
 ## Phase boundary
 
 The current device state has progressed beyond Phase 4. In particular, the live VPN 0 configuration includes OSPF state introduced during **Phase 5**.
