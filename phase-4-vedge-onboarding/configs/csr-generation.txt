@@ -1,0 +1,8 @@
+# Phase 4 — CSR generation
+
+request csr upload home/admin/csr.txt
+
+# Organization unit used during CSR generation
+appbee-sdwan-project
+
+# CSR body is intentionally not stored in this public repository.
