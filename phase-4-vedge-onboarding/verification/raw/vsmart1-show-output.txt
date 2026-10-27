@@ -1,0 +1,18 @@
+vSmart1# show omp peers
+
+                         DOMAIN    OVERLAY   SITE
+PEER             TYPE    ID        ID        ID        STATE    UPTIME           R/I/S
+------------------------------------------------------------------------------------------
+55.55.10.4       vsmart  1         1         10        up       0:00:01:21       2/0/2
+55.55.55.51      vedge   1         1         50        up       0:00:01:40       2/0/0
+
+vSmart1# show control connections
+                                                                                             PEER                                          PEER
+      PEER    PEER PEER            SITE       DOMAIN PEER                                    PRIV  PEER                                    PUB
+INDEX TYPE    PROT SYSTEM IP       ID         ID     PRIVATE IP                              PORT  PUBLIC IP                               PORT  ORGANIZATION            REMOTE COLOR     STATE UPTIME
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+0     vedge   dtls 55.55.55.51     50         1      50.1.2.1                                12386 50.1.2.1                                12386 appbee-sdwan-project      mpls            up     0:00:01:01
+0     vedge   dtls 55.55.55.51     50         1      50.2.2.1                                12386 50.2.2.1                                12386 appbee-sdwan-project      public-internet up     0:00:01:43
+0     vsmart  dtls 55.55.10.4      10         1      100.10.1.14                             12346 100.10.1.14                             12346 appbee-sdwan-project      default         up     0:00:01:25
+0     vbond   dtls 55.55.10.2      0          0      100.10.1.12                             12346 100.10.1.12                             12346 appbee-sdwan-project      default         up     0:00:01:44
+0     vmanage dtls 55.55.10.1      10         0      100.10.1.11                             12346 100.10.1.11                             12346 appbee-sdwan-project      default         up     0:00:01:41
