@@ -1,0 +1,59 @@
+DEVICE: vEdge-DRC-Cyber2
+SYSTEM-IP: 55.55.55.20
+METHOD: CLI
+
+show running-config vpn 1
+
+vpn 1
+ interface ge0/3
+  ip address 172.16.21.1/24
+  no shutdown
+ !
+ ip route 192.168.21.0/24 172.16.21.2
+ ip route 192.168.22.0/24 172.16.21.2
+ ip route 192.168.23.0/24 172.16.21.2
+ omp
+  advertise connected
+  advertise static
+ !
+!
+
+show interface vpn 1 | tab
+
+VPN 1 / ge0/3 / 172.16.21.1/24 / Admin Up / Oper Up / service
+
+show ip route vpn 1 — key verified routes
+
+172.16.21.0/24   connected   ge0/3
+172.16.31.0/24   omp         55.55.55.30 / mpls + public-internet
+
+192.168.21.0/24  static      172.16.21.2
+192.168.22.0/24  static      172.16.21.2
+192.168.23.0/24  static      172.16.21.2
+
+192.168.31.0/24  omp         55.55.55.30 / mpls + public-internet
+192.168.32.0/24  omp         55.55.55.30 / mpls + public-internet
+192.168.33.0/24  omp         55.55.55.30 / mpls + public-internet
+
+show omp peers
+
+55.55.10.3 / vSmart / UP
+55.55.10.4 / vSmart / UP
+
+show omp routes vpn 1 — key verification
+
+172.16.31.0/24:
+ originator 55.55.55.30
+ origin-proto connected
+ received over MPLS and public-internet TLOCs
+
+Remote DCI static routes are present through OMP.
+
+ping vpn 1 172.16.31.1
+
+7 packets transmitted, 7 received, 0% packet loss
+rtt min/avg/max/mdev = 34.278/39.903/49.148/4.575 ms
+
+traceroute vpn 1 172.16.31.1
+
+1 172.16.31.1 48.842 ms 48.312 ms 48.080 ms
