@@ -1,0 +1,5 @@
+# Phase 4 — Device certificate installation
+
+request certificate install home/admin/cert.txt
+
+# Private key and granted certificate body are intentionally excluded.
