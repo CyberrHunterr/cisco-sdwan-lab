@@ -1,0 +1,43 @@
+LONDON LOCALIZED ROUTE POLICY — FINAL CONFIGURATION SUMMARY
+
+vEdge-LDN1
+----------
+
+Prefix lists:
+- DC-PREFIX: 192.168.36/37/38.0/24
+- DRC-PREFIX: 192.168.26/27/28.0/24
+- LAN-FACING-PREFIX: 192.168.46/47/48.0/24
+
+SET_LOCALPREF_RECEIVED_PREFIX:
+- DRC-PREFIX -> accept + local-preference 1000
+- DC-PREFIX -> accept
+- default-action reject
+
+DONT_PASSING_USE_OTHER_PATH:
+- LAN-FACING-PREFIX -> accept + as-path prepend 11111
+- default-action reject
+
+Applied:
+- SITE-LONDON2 neighbor -> SET_LOCALPREF_RECEIVED_PREFIX out
+- DC-DCI neighbor -> DONT_PASSING_USE_OTHER_PATH out
+
+vEdge-LDN2
+----------
+
+Prefix lists:
+- DC-PREFIX: 192.168.36/37/38.0/24
+- DRC-PREFIX: 192.168.26/27/28.0/24
+- LAN-FACING-PREFIX: 192.168.46/47/48.0/24
+
+SET_LOCALPREF_RECEIVED_PREFIX:
+- DC-PREFIX -> accept + local-preference 1000
+- DRC-PREFIX -> accept
+- default-action reject
+
+DONT_PASSING_USE_OTHER_PATH:
+- LAN-FACING-PREFIX -> accept + as-path prepend 65040
+- default-action reject
+
+Applied:
+- SITE-LONDON2 neighbor -> SET_LOCALPREF_RECEIVED_PREFIX out
+- DRC-Cyber2 neighbor -> DONT_PASSING_USE_OTHER_PATH out
