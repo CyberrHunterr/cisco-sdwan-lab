@@ -101,6 +101,14 @@ DRC1-CYBER2# traceroute 172.16.51.1
 
 The path evidence shows that spoke-to-spoke traffic is no longer direct and traverses the Head Office hub.
 
+## Configuration files
+
+Final Phase 11 configuration references are stored under [configs/](configs/):
+
+- [vsmart1-centralized-policy.conf](configs/vsmart1-centralized-policy.conf)
+- [vsmart2-centralized-policy.conf](configs/vsmart2-centralized-policy.conf)
+- [vedge-ho-vpn1.conf](configs/vedge-ho-vpn1.conf)
+
 ## Repository evidence
 
 - [verification/cli-evidence/](verification/cli-evidence/)
