@@ -1,6 +1,4 @@
-SOURCE: User-provided terminal screenshot
 DEVICE: DRC1-CYBER2
-TRANSCRIPTION TYPE: Screenshot transcription — not original terminal capture
 
 Configuration applied:
 
