@@ -158,7 +158,7 @@ See:
 
 - [verification/cli-evidence/phase8-continuity-checks.txt](verification/cli-evidence/phase8-continuity-checks.txt)
 
-## Screenshot evidence
+## Images
 
 The selected screenshot set for this phase is stored under:
 
@@ -175,7 +175,7 @@ The evidence set is intentionally selective rather than duplicating every screen
 - Cyber2 return-route correction
 - successful Paris → Cyber2 sourced ping validation
 
-## CLI evidence
+## CLI Evidence
 
 CLI verification evidence is stored under:
 
