@@ -1,0 +1,64 @@
+SOURCE: Phase 9 WG3 report screenshots
+DEVICE: vEdge-PRS1
+SYSTEM-IP: 55.55.55.50
+TRANSCRIPTION TYPE: Screenshot transcription — not original terminal capture
+
+=== OSPF neighbor evidence ===
+
+show ospf neighbor
+
+Readable VPN 1 neighbor:
+VPN: 1
+IP address: 172.16.51.69
+Interface: ge0/2
+Router ID: 50.50.50.100
+State: full
+Priority: 1
+
+A separate visible VPN 0 neighbor also appears in the capture and is outside Phase 9 VPN 1 acceptance scope.
+
+=== OSPF interface evidence ===
+
+show ospf interface
+
+Readable VPN 1 interface values:
+interface: ge0/2
+IP: 172.16.51.1/24
+router-id: 55.55.55.50
+interface type: broadcast
+cost: 5
+designated-router-id: 50.50.50.100
+backup-designated-router-id: 55.55.55.50
+designated-router-ip: 172.16.51.69
+backup-designated-router-ip: 172.16.51.1
+neighbor-count: 1
+adj-neighbor-count: 1
+
+=== Route transition evidence ===
+
+After removal of the older static routes, the report screenshot shows:
+
+192.168.51.0/24  ospf  IA  ge0/2  172.16.51.69  F,S
+192.168.52.0/24  ospf  IA  ge0/2  172.16.51.69  F,S
+192.168.53.0/24  ospf  IA  ge0/2  172.16.51.69  F,S
+
+This is the key Phase 9 transition: the Paris LAN prefixes are learned dynamically with OSPF instead of being retained as static routes.
+
+=== Phase 9 OSPF intent represented in report ===
+
+vpn 1
+ router
+  ospf
+   router-id 55.55.55.50
+   default-information originate
+   redistribute omp
+   area 0
+    interface ge0/2
+     cost 5
+    exit
+   exit
+  !
+ !
+
+NOTE:
+The configuration block above is transcribed from the documented Phase 9 configuration and correlated with screenshot verification. It is not presented as a raw terminal capture.
