@@ -1,0 +1,28 @@
+vEdge-DRC-Cyber2 — BGP POLICY VERIFICATION
+
+BGP summary
+-----------
+Local AS: 65020
+
+40.40.40.1  AS65040  established  6 prefixes received
+40.40.40.2  AS65040  established  3 prefixes received
+
+London LAN path selection
+-------------------------
+
+192.168.46.0/24
+  via 40.40.40.1  AS-PATH 65040          BEST
+  via 40.40.40.2  AS-PATH "65040 65040"
+
+192.168.47.0/24
+  via 40.40.40.1  AS-PATH 65040          BEST
+  via 40.40.40.2  AS-PATH "65040 65040"
+
+192.168.48.0/24
+  via 40.40.40.1  AS-PATH 65040          BEST
+  via 40.40.40.2  AS-PATH "65040 65040"
+
+Result
+------
+Cyber2 prefers LDN1 for London LAN prefixes.
+LDN2 advertises the same prefixes with an additional AS-path prepend.
