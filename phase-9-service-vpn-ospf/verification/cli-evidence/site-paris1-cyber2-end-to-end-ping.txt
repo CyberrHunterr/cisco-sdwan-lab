@@ -1,0 +1,37 @@
+SOURCE: User-provided terminal screenshot
+DEVICE: SITE-PARIS1
+TRANSCRIPTION TYPE: Screenshot transcription — not original terminal capture
+
+Command:
+ping 192.168.21.1 source 192.168.51.1
+
+Result:
+Sending 5, 100-byte ICMP Echos to 192.168.21.1, timeout is 2 seconds:
+Packet sent with a source address of 192.168.51.1
+!!!!!
+Success rate is 100 percent (5/5), round-trip min/avg/max = 70/72/75 ms
+
+Command:
+ping 192.168.22.1 source 192.168.51.1
+
+Result:
+Sending 5, 100-byte ICMP Echos to 192.168.22.1, timeout is 2 seconds:
+Packet sent with a source address of 192.168.51.1
+!!!!!
+Success rate is 100 percent (5/5), round-trip min/avg/max = 54/62/78 ms
+
+Command:
+ping 192.168.23.1 source 192.168.51.1
+
+Result:
+Sending 5, 100-byte ICMP Echos to 192.168.23.1, timeout is 2 seconds:
+Packet sent with a source address of 192.168.51.1
+!!!!!
+Success rate is 100 percent (5/5), round-trip min/avg/max = 42/55/76 ms
+
+Result summary:
+- 192.168.21.1: PASS, 5/5
+- 192.168.22.1: PASS, 5/5
+- 192.168.23.1: PASS, 5/5
+
+These tests verify successful sourced connectivity from the Paris LAN toward the three Cyber2-side LAN gateway addresses after the return routes were added.
