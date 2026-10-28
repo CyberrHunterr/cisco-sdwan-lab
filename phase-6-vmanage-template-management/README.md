@@ -38,7 +38,7 @@ The preserved CLI evidence confirms:
 - BFD sessions across the verified fabric: **UP**
 - MPLS-facing OSPF neighbor: **FULL**
 
-## GUI evidence
+## Images
 
 ### Feature Templates
 
@@ -72,7 +72,7 @@ The WAN Edge device list shows vEdge-DC-DCI in **vManage** mode with **WG3-vEdge
 
 ## Evidence
 
-- [verification/device-verification/vedge-dc-dci-post-push.txt](verification/device-verification/vedge-dc-dci-post-push.txt)
+- [verification/cli-evidence/vedge-dc-dci-post-push.txt](verification/cli-evidence/vedge-dc-dci-post-push.txt)
 - [verification/phase6-checklist.md](verification/phase6-checklist.md)
 - [verification/images/](verification/images/)
 
