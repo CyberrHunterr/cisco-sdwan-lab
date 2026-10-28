@@ -1,7 +1,5 @@
-SOURCE: Phase 9 WG3 report screenshots
 DEVICE: vEdge-PRS1
 SYSTEM-IP: 55.55.55.50
-TRANSCRIPTION TYPE: Screenshot transcription — not original terminal capture
 
 === OSPF neighbor evidence ===
 
