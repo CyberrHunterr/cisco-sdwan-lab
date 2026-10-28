@@ -64,7 +64,7 @@ This verifies VRRP takeover and restoration behavior.
 
 A packet-loss count from the continuous-ping portion of the failover test was not preserved, so no numeric packet-loss claim is made.
 
-## GUI Evidence
+## Images
 
 ### PRS2 VRRP template push
 
@@ -115,8 +115,8 @@ Current device output also contains routing configuration introduced by later wo
 ## Evidence
 
 - [configs/](configs/)
-- [verification/device-verification/vedge-prs1-vrrp-dhcp.txt](verification/device-verification/vedge-prs1-vrrp-dhcp.txt)
-- [verification/device-verification/vedge-prs2-vrrp-dhcp.txt](verification/device-verification/vedge-prs2-vrrp-dhcp.txt)
+- [verification/cli-evidence/vedge-prs1-vrrp-dhcp.txt](verification/cli-evidence/vedge-prs1-vrrp-dhcp.txt)
+- [verification/cli-evidence/vedge-prs2-vrrp-dhcp.txt](verification/cli-evidence/vedge-prs2-vrrp-dhcp.txt)
 - [verification/phase8-checklist.md](verification/phase8-checklist.md)
 - [verification/images/](verification/images/)
 
