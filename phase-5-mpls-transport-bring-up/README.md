@@ -30,10 +30,10 @@ Phase 5 verification confirms:
 
 ## Evidence
 
-- [verification/device-verification/](verification/device-verification/)
+- [verification/cli-evidence/](verification/cli-evidence/)
+- [verification/images/](verification/images/)
 - [verification/observed-transport-state.md](verification/observed-transport-state.md)
 - [verification/phase5-checklist.md](verification/phase5-checklist.md)
-- [verification/raw/](verification/raw/)
 
 ## Configuration set
 
