@@ -22,6 +22,7 @@ The repository is organized by phase. Each phase separates:
 | Phase 5 | MPLS transport bring-up, OSPF and BFD verification | ✅ Complete |
 | Phase 6 | vManage Feature/Device Template management | ✅ Complete |
 | Phase 7 | Service VPN 1, connected/static routes, OMP propagation | ✅ Complete |
+| Phase 8 | Paris branch VRRP, DHCP and failover | ✅ Complete |
 | Later phases | Additional SD-WAN service functions | Planned |
 
 ## Phase 1 — Underlay Infrastructure
@@ -103,6 +104,18 @@ Open [phase-7-service-vpn-connected-static/](phase-7-service-vpn-connected-stati
 - CLI vs Template comparison.
 
 GUI screenshots for the Phase 7 template workflow may be added later as supplemental evidence; the preserved CLI and routing evidence already validates the operational result.
+
+## Phase 8 — Service VPN: VRRP & DHCP
+
+Open [phase-8-service-vpn-vrrp-dhcp/](phase-8-service-vpn-vrrp-dhcp/) for:
+
+- Paris branch VPN 1 gateway redundancy,
+- PRS1 CLI-based VRRP and DHCP,
+- PRS2 vManage-template-based VRRP and DHCP,
+- Device Template / Feature Template evidence,
+- DHCP lease verification,
+- VRRP failover and restoration validation,
+- preserved vManage screenshots and CLI evidence.
 
 ## Evidence Policy
 
