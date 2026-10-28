@@ -106,9 +106,9 @@ Detailed verification evidence:
 
 ➡️ [Phase 1 Verification Results](verification/observed-core-state.md)
 
-Raw CLI evidence:
+CLI evidence:
 
-➡️ [verification/raw/](verification/raw/)
+➡️ [verification/cli-evidence/](verification/cli-evidence/)
 
 ## Scope and Evidence Notes
 
