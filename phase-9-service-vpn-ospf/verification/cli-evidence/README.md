@@ -1,13 +1,6 @@
 # Phase 9 CLI Evidence
 
-This folder contains readable CLI evidence captured from Phase 9 terminal screenshots and final validation checks.
-
-Evidence rules:
-
-- only clearly readable values are included;
-- cropped or unreadable lines are not reconstructed;
-- earlier/later phase state is separated from Phase 9 acceptance evidence;
-- superseded failed-test evidence is excluded from the final acceptance set.
+This folder contains the CLI verification evidence used for Phase 9.
 
 Files:
 
