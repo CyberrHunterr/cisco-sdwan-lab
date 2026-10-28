@@ -1,0 +1,30 @@
+SOURCE: Phase 9 WG3 report screenshot, end-to-end validation section
+DEVICE: vEdge-PRS1
+TRANSCRIPTION TYPE: Screenshot transcription — not original terminal capture
+STATUS: FAILED TEST EVIDENCE — NOT AN ACCEPTANCE PASS
+
+Command:
+ping vpn 1 192.168.21.10
+
+Observed result:
+3 packets transmitted
+0 received
+100% packet loss
+
+Command:
+traceroute vpn 1 192.168.21.10
+
+Observed result:
+Traceroute started toward 192.168.21.10.
+Visible hops in the screenshot show repeated '* * *' with no successful hop displayed in the preserved portion.
+
+The report also shows attempted SITE-PARIS1 sourced tests using:
+ping 192.168.21.10 source 192.168.51.10
+ping 192.168.31.10 source 192.168.51.10
+traceroute 192.168.31.10 source 192.168.51.10
+
+Those SITE-PARIS1 attempts display:
+% Invalid source address - IP address not on any of our up interfaces
+
+INTERPRETATION:
+These screenshots preserve a failed end-to-end test state. They are useful troubleshooting evidence, but they do not satisfy the Phase 9 successful ping/traceroute acceptance criterion.
