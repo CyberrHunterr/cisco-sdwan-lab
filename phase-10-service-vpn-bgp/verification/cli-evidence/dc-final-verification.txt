@@ -1,0 +1,52 @@
+DATA CENTER — FINAL VERIFICATION
+
+vEdge-DC-DCI
+------------
+
+OSPF neighbor:
+172.16.32.2 / router-id 30.30.30.100 / FULL
+
+BGP peers:
+30.30.30.100 AS65030 established
+40.40.40.1   AS65040 established
+40.40.40.2   AS65040 established
+
+DC2-DCI LAN-side iBGP neighbor:
+neighbor 30.30.30.100
+ remote-as 65030
+ update-source loopback0
+ next-hop-self
+
+Localized-policy path selection
+-------------------------------
+
+192.168.46.0/24:
+  via 40.40.40.1  AS-PATH "65040 11111"
+  via 40.40.40.2  AS-PATH 65040  BEST
+
+192.168.47.0/24:
+  via 40.40.40.1  AS-PATH "65040 11111"
+  via 40.40.40.2  AS-PATH 65040  BEST
+
+192.168.48.0/24:
+  via 40.40.40.1  AS-PATH "65040 11111"
+  via 40.40.40.2  AS-PATH 65040  BEST
+
+DC2-DCI
+-------
+
+Ethernet0/0 172.16.32.2 up/up
+Loopback0   30.30.30.100 up/up
+Loopback1   192.168.36.10 up/up
+Loopback2   192.168.37.10 up/up
+Loopback3   192.168.38.10 up/up
+
+BGP routes:
+192.168.46.0/24 via 30.30.30.1
+192.168.47.0/24 via 30.30.30.1
+192.168.48.0/24 via 30.30.30.1
+
+Final sourced ping:
+192.168.36.10 -> 192.168.46.10  5/5 100%
+192.168.36.10 -> 192.168.47.10  5/5 100%
+192.168.36.10 -> 192.168.48.10  5/5 100%
