@@ -140,8 +140,8 @@ After the return path was present, sourced pings from Paris succeeded:
 
 See:
 
-- [verification/report-transcriptions/drc1-cyber2-paris-return-routes.txt](verification/report-transcriptions/drc1-cyber2-paris-return-routes.txt)
-- [verification/report-transcriptions/site-paris1-cyber2-end-to-end-ping.txt](verification/report-transcriptions/site-paris1-cyber2-end-to-end-ping.txt)
+- [verification/cli-evidence/drc1-cyber2-paris-return-routes.txt](verification/cli-evidence/drc1-cyber2-paris-return-routes.txt)
+- [verification/cli-evidence/site-paris1-cyber2-end-to-end-ping.txt](verification/cli-evidence/site-paris1-cyber2-end-to-end-ping.txt)
 
 ## Phase 8 continuity
 
@@ -156,7 +156,7 @@ Preserved verification shows:
 
 See:
 
-- [verification/report-transcriptions/phase8-continuity-checks.txt](verification/report-transcriptions/phase8-continuity-checks.txt)
+- [verification/cli-evidence/phase8-continuity-checks.txt](verification/cli-evidence/phase8-continuity-checks.txt)
 
 ## Screenshot evidence
 
@@ -175,13 +175,11 @@ The evidence set is intentionally selective rather than duplicating every screen
 - Cyber2 return-route correction
 - successful Paris → Cyber2 sourced ping validation
 
-## Text evidence
+## CLI evidence
 
-Terminal screenshots from the working report were transcribed only where values were clearly readable.
+CLI verification evidence is stored under:
 
-These transcriptions are **not raw terminal captures** and are labeled accordingly:
-
-- [verification/report-transcriptions/](verification/report-transcriptions/)
+- [verification/cli-evidence/](verification/cli-evidence/)
 
 ## Acceptance
 
