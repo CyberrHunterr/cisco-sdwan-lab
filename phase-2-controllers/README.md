@@ -47,11 +47,11 @@ The current live lab uses the PE Router transport address `100.10.1.10` as the d
 | vManage GUI access | ✅ Passed |
 | Controller inventory visibility | ✅ Passed |
 
-## Raw Verification Evidence
+## Verification Evidence
 
 Preserved CLI verification excerpts and terminal captures are stored under:
 
-➡️ [verification/raw/](verification/raw/)
+➡️ [verification/cli-evidence/](verification/cli-evidence/)
 
 ## Scope Note
 
