@@ -19,8 +19,10 @@ The repository is organized by phase. Each phase separates:
 | Phase 2 | vBond, vSmart, vManage controller deployment | ✅ Complete |
 | Phase 3 | PKI, Root CA, controller onboarding | ✅ Complete |
 | Phase 4 | vEdge certificate installation and onboarding | ✅ Complete |
-| Phase 5 | MPLS transport bring-up, OSPF and BFD verification | Planned |
-| Later phases | vManage templates and additional SD-WAN functions | Planned |
+| Phase 5 | MPLS transport bring-up, OSPF and BFD verification | ✅ Complete |
+| Phase 6 | vManage Feature/Device Template management | ✅ Complete |
+| Phase 7 | Service VPN 1, connected/static routes, OMP propagation | ✅ Complete |
+| Later phases | Additional SD-WAN service functions | Planned |
 
 ## Phase 1 — Underlay Infrastructure
 
@@ -68,6 +70,39 @@ Open [phase-4-vedge-onboarding/](phase-4-vedge-onboarding/) for:
 - live controller-connection verification,
 - OMP peer verification,
 - preserved raw vEdge and vSmart CLI evidence.
+
+## Phase 5 — MPLS Transport Bring-Up
+
+Open [phase-5-mpls-transport-bring-up/](phase-5-mpls-transport-bring-up/) for:
+
+- MPLS-side OSPF extension,
+- Internet Router ↔ MPLS-P3 interconnect,
+- vEdge transport-side routing,
+- full-fabric BFD verification.
+
+## Phase 6 — vManage Template Management
+
+Open [phase-6-vmanage-template-management/](phase-6-vmanage-template-management/) for:
+
+- System/AAA/BFD/OMP/Security Feature Templates,
+- VPN 0, MPLS, Internet, OSPF and VPN 512 templates,
+- Device Template assembly,
+- Device Specific values,
+- template push and post-push CLI verification.
+
+## Phase 7 — Service VPN Connected & Static Routes
+
+Open [phase-7-service-vpn-connected-static/](phase-7-service-vpn-connected-static/) for:
+
+- VPN 1 connected routing,
+- VPN 1 static routing,
+- CLI-managed Cyber2 configuration,
+- vManage-template-managed DCI configuration,
+- OMP propagation,
+- VPN-aware ping/traceroute verification,
+- CLI vs Template comparison.
+
+GUI screenshots for the Phase 7 template workflow may be added later as supplemental evidence; the preserved CLI and routing evidence already validates the operational result.
 
 ## Evidence Policy
 
