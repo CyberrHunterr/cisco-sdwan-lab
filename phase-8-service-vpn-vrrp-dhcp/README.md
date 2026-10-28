@@ -64,6 +64,50 @@ This verifies VRRP takeover and restoration behavior.
 
 A packet-loss count from the continuous-ping portion of the failover test was not preserved, so no numeric packet-loss claim is made.
 
+## GUI Evidence
+
+### PRS2 VRRP template push
+
+![PRS2 VRRP push success](verification/images/prs2-vrrp-push-success.png)
+
+The vManage task reports a successful Feature Template push to `vEdge-PRS2`.
+
+### PRS2 DHCP Feature Template — basic configuration
+
+![PRS2 DHCP template basic configuration](verification/images/prs2-dhcp-template-basic.png)
+
+This view documents the DHCP address pool, excluded addresses, lease time, offer time and administrative state.
+
+### PRS2 DHCP gateway and DNS options
+
+![PRS2 DHCP options](verification/images/prs2-dhcp-options.png)
+
+The DHCP settings use the VRRP virtual IP `172.16.51.254` as the default gateway and `8.8.8.8` as DNS.
+
+### Feature Template inventory
+
+![PRS2 Feature Template list](verification/images/prs2-feature-template-list.png)
+
+The vManage Feature Templates view preserves the PRS2-related template inventory used for the Paris branch.
+
+### Device Template / Service VPN composition
+
+![PRS2 Device Template Service VPN](verification/images/prs2-device-template-service-vpn.png)
+
+This view shows the Service VPN composition inside the PRS2 Device Template and the association of the Paris VPN 1 components.
+
+### DHCP Config Diff
+
+![PRS2 DHCP Config Diff](verification/images/prs2-config-diff-dhcp.png)
+
+The configuration preview shows the DHCP server block being added while the existing VRRP configuration remains present.
+
+### DHCP template push success
+
+![PRS2 DHCP push success](verification/images/prs2-dhcp-push-success.png)
+
+The final vManage task reports validation/push success for `vEdge-PRS2`.
+
 ## Scope note
 
 Current device output also contains routing configuration introduced by later work, including VPN 1 OSPF. Those later-phase elements are preserved in device state but are excluded from Phase 8 acceptance criteria.
@@ -74,6 +118,7 @@ Current device output also contains routing configuration introduced by later wo
 - [verification/device-verification/vedge-prs1-vrrp-dhcp.txt](verification/device-verification/vedge-prs1-vrrp-dhcp.txt)
 - [verification/device-verification/vedge-prs2-vrrp-dhcp.txt](verification/device-verification/vedge-prs2-vrrp-dhcp.txt)
 - [verification/phase8-checklist.md](verification/phase8-checklist.md)
+- [verification/images/](verification/images/)
 
 ## Phase status
 
