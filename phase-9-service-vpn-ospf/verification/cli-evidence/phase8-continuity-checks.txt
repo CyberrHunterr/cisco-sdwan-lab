@@ -1,0 +1,47 @@
+SOURCE: Phase 9 WG3 report screenshots
+PURPOSE: Verify Phase 8 VRRP/DHCP state survived Phase 9 OSPF changes
+TRANSCRIPTION TYPE: Screenshot transcription — not original terminal capture
+
+=== vEdge-PRS1 ===
+
+show vrrp
+
+VPN: 1
+interface: ge0/2
+group: 50
+virtual-ip: 172.16.51.254
+priority: 200
+real-priority: 200
+vrrp-state: primary
+omp-state: up
+
+show dhcp server
+
+DHCP server table is present for:
+VPN 1 / ge0/2
+
+No active lease row is visible in the PRS1 screenshot.
+
+=== vEdge-PRS2 ===
+
+show vrrp
+
+VPN: 1
+interface: ge0/2
+group: 50
+virtual-ip: 172.16.51.254
+priority: 150
+real-priority: 150
+vrrp-state: backup
+omp-state: up
+
+show dhcp server
+
+Readable lease:
+client-ip: 172.16.51.69
+lease-time: 1:00:00:00
+static-binding: false
+host-name: Router
+
+RESULT:
+The screenshots show that the Phase 8 VRRP role split remained intact after Phase 9 OSPF work: PRS1 primary, PRS2 backup.
