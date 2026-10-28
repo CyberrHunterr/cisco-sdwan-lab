@@ -36,23 +36,33 @@ Both devices use:
 
 ## Verified state
 
-### PRS1
+### Normal state
 
-- VRRP state: **primary**
-- priority: **200**
+- PRS1: **primary**, priority **200**
+- PRS2: **backup**, priority **150**
+- both devices use VRRP group **50**
+- virtual IP: **172.16.51.254**
 - OMP state: **up**
-- DHCP server configured and enabled
-- no current DHCP binding on PRS1
 
-### PRS2
+### DHCP
 
-- VRRP state: **backup**
-- priority: **150**
-- OMP state: **up**
-- DHCP server configured and enabled
-- active DHCP binding: `172.16.51.69`
-- vSmart/vManage control connections: **UP**
-- verified BFD sessions: **UP**
+- DHCP server is configured on both devices
+- PRS2 has an observed lease for `172.16.51.69`
+- DHCP default gateway is the VRRP virtual IP `172.16.51.254`
+
+### Failover
+
+During the failover test, PRS1's LAN side was taken out of service and PRS2 transitioned from **backup** to **primary**.
+
+After PRS1 was restored:
+
+- PRS1 returned to **primary**
+- PRS2 returned to **backup**
+- OMP state remained **up**
+
+This verifies VRRP takeover and restoration behavior.
+
+A packet-loss count from the continuous-ping portion of the failover test was not preserved, so no numeric packet-loss claim is made.
 
 ## Scope note
 
@@ -67,6 +77,4 @@ Current device output also contains routing configuration introduced by later wo
 
 ## Phase status
 
-**VRRP + DHCP configuration: ✅ Verified**
-
-**Failover acceptance: ⬜ Pending preserved failover evidence**
+**✅ Phase 8 complete — VRRP, DHCP, failover takeover and role restoration verified.**
