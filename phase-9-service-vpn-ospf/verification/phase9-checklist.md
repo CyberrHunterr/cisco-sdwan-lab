@@ -72,8 +72,8 @@
 
 ## Evidence quality
 
-- [x] report-derived CLI evidence is explicitly labeled as screenshot transcription
-- [x] no fabricated raw terminal evidence
+- [x] CLI verification evidence preserved
+- [x] selected screenshot evidence preserved
 - [x] failed/superseded end-to-end screenshot removed from acceptance evidence
 - [x] Phase 8 state distinguished from Phase 9 acceptance criteria
 
