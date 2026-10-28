@@ -1,3 +1,3 @@
 # Phase 9 Images
 
-Selected Phase 9 GUI and CLI screenshots are stored in this directory.
+Selected visual verification evidence for Phase 9 is stored in this directory.
