@@ -1,0 +1,56 @@
+SITE-LONDON2 — FINAL VERIFICATION
+
+Interface state
+---------------
+Ethernet0/0  172.16.42.2  up/up
+Loopback0    40.40.40.100 up/up
+Loopback1    192.168.46.10 up/up
+Loopback2    192.168.47.10 up/up
+Loopback3    192.168.48.10 up/up
+
+OSPF neighbors
+--------------
+40.40.40.1  FULL/DROTHER  172.16.42.1
+40.40.40.2  FULL/BDR      172.16.42.3
+
+BGP summary
+-----------
+40.40.40.1  AS65040  established  3 prefixes
+40.40.40.2  AS65040  established  3 prefixes
+
+BGP routes
+----------
+192.168.36.0/24 via 40.40.40.2
+192.168.37.0/24 via 40.40.40.2
+192.168.38.0/24 via 40.40.40.2
+
+Local preference selection
+--------------------------
+192.168.36.0/24
+  40.40.40.1  local-pref 100
+  40.40.40.2  local-pref 1000  BEST
+
+192.168.37.0/24
+  40.40.40.1  local-pref 100
+  40.40.40.2  local-pref 1000  BEST
+
+192.168.38.0/24
+  40.40.40.1  local-pref 100
+  40.40.40.2  local-pref 1000  BEST
+
+Final sourced ping
+------------------
+192.168.46.10 -> 192.168.36.10  5/5 100%
+192.168.46.10 -> 192.168.37.10  5/5 100%
+192.168.46.10 -> 192.168.38.10  5/5 100%
+
+Traceroute to DC
+----------------
+source 192.168.46.10
+destination 192.168.36.10
+
+1 172.16.42.3
+2 *
+3 192.168.36.10
+
+First hop 172.16.42.3 = vEdge-LDN2.
