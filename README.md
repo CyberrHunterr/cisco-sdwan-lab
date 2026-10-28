@@ -23,6 +23,7 @@ The repository is organized by phase. Each phase separates:
 | Phase 6 | vManage Feature/Device Template management | ✅ Complete |
 | Phase 7 | Service VPN 1, connected/static routes, OMP propagation | ✅ Complete |
 | Phase 8 | Paris branch VRRP, DHCP and failover | ✅ Complete |
+| Phase 9 | Paris Service VPN OSPF, LAN↔overlay route exchange | ✅ Complete |
 | Later phases | Additional SD-WAN service functions | Planned |
 
 ## Phase 1 — Underlay Infrastructure
@@ -117,6 +118,22 @@ Open [phase-8-service-vpn-vrrp-dhcp/](phase-8-service-vpn-vrrp-dhcp/) for:
 - DHCP lease verification,
 - VRRP failover and restoration validation,
 - preserved vManage screenshots and CLI evidence.
+
+## Phase 9 — Service VPN: OSPF
+
+Open [phase-9-service-vpn-ospf/](phase-9-service-vpn-ospf/) for:
+
+- SITE-PARIS1 LAN-facing OSPF,
+- PRS1 CLI-based VPN 1 OSPF,
+- PRS2 vManage-template-based VPN 1 OSPF,
+- broadcast-segment DR/BDR verification,
+- transition from static Paris LAN routes to OSPF,
+- OMP → OSPF redistribution,
+- default-route origination toward the LAN,
+- Phase 8 VRRP/DHCP continuity checks,
+- Cyber2 return-path correction,
+- successful Paris → Cyber2 sourced ping verification,
+- selected GUI/CLI screenshot evidence and transcriptions.
 
 ## Evidence Policy
 
