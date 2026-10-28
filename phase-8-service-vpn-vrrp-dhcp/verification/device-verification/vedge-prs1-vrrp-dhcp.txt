@@ -1,0 +1,56 @@
+DEVICE: vEdge-PRS1
+SYSTEM-IP: 55.55.55.50
+METHOD: CLI
+
+PHASE 8 RELEVANT RUNNING CONFIG
+
+vpn 1
+ interface ge0/2
+  description "To VPN 1 LAN facing"
+  ip address 172.16.51.1/24
+  no shutdown
+  vrrp 50
+   priority 200
+   track-omp
+   ipv4 172.16.51.254
+  !
+  dhcp-server
+   address-pool 172.16.51.0/24
+   exclude 172.16.51.1 172.16.51.2 172.16.51.254 172.16.51.3
+   offer-time 600
+   lease-time 86400
+   admin-state up
+   options
+    default-gateway 172.16.51.254
+    dns-servers 8.8.8.8
+   !
+  !
+ !
+!
+
+show vrrp
+
+vpn 1 / ge0/2 / group 50
+virtual-ip: 172.16.51.254
+priority: 200
+real-priority: 200
+vrrp-state: primary
+omp-state: up
+advertisement-timer: 1
+primary-down-timer: 3
+
+show dhcp server
+
+VPN 1 ge0/2 server present.
+No active lease rows in this capture.
+
+show dhcp server bindings
+
+No entries found.
+
+show ip route vpn 1 — Phase 8 relevant
+
+172.16.51.0/24 connected via ge0/2, F,S
+
+NOTE:
+Current routing output also contains OSPF and other overlay routes introduced by later phases. These are not used as Phase 8 acceptance evidence.
