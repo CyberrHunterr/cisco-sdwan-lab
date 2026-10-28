@@ -25,7 +25,8 @@ The repository is organized by phase. Each phase separates:
 | Phase 8 | Paris branch VRRP, DHCP and failover | ✅ Complete |
 | Phase 9 | Paris Service VPN OSPF, LAN↔overlay route exchange | ✅ Complete |
 | Phase 10 | VPN 2 BGP, iBGP/eBGP and localized route policy | ✅ Complete |
-| Later phases | Additional SD-WAN service functions | Planned |
+| Phase 11 | vSmart templates, centralized policy, Hub & Spoke | ✅ Complete |
+| Program | WG3 Cisco SD-WAN lab | ✅ 11 / 11 Complete |
 
 ## Phase 1 — Underlay Infrastructure
 
@@ -150,6 +151,23 @@ Open [phase-10-service-vpn-bgp/](phase-10-service-vpn-bgp/) for:
 - verified DC and Cyber2 return-path selection,
 - bidirectional 100% sourced ping validation,
 - implementation troubleshooting and final-state evidence.
+
+## Phase 11 — vSmart Template & Centralized Policy (Hub & Spoke)
+
+Open [phase-11-centralized-policy-hub-spoke/](phase-11-centralized-policy-hub-spoke/) for:
+
+- vSmart centralized-policy state,
+- Hub & Spoke control policy,
+- Head Office hub definition,
+- Paris and DRC spoke definitions,
+- VPN 1 policy scope,
+- centralized policy on both vSmart controllers,
+- Head Office Null0 default route and OMP advertisement,
+- spoke default-route verification,
+- Paris ↔ DRC hub-transit traceroute evidence,
+- final Phase 11 verification checklist.
+
+**WG3 program status: 11 / 11 phases complete.**
 
 ## Evidence Policy
 
