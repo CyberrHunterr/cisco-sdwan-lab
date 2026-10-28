@@ -24,6 +24,7 @@ The repository is organized by phase. Each phase separates:
 | Phase 7 | Service VPN 1, connected/static routes, OMP propagation | ✅ Complete |
 | Phase 8 | Paris branch VRRP, DHCP and failover | ✅ Complete |
 | Phase 9 | Paris Service VPN OSPF, LAN↔overlay route exchange | ✅ Complete |
+| Phase 10 | VPN 2 BGP, iBGP/eBGP and localized route policy | ✅ Complete |
 | Later phases | Additional SD-WAN service functions | Planned |
 
 ## Phase 1 — Underlay Infrastructure
@@ -134,6 +135,21 @@ Open [phase-9-service-vpn-ospf/](phase-9-service-vpn-ospf/) for:
 - Cyber2 return-path correction,
 - successful Paris → Cyber2 sourced ping verification,
 - selected image and CLI evidence.
+
+## Phase 10 — Service VPN: BGP & Localized Route Policy
+
+Open [phase-10-service-vpn-bgp/](phase-10-service-vpn-bgp/) for:
+
+- VPN 2 iBGP inside London and Data Center,
+- eBGP between London, DC and DRC,
+- loopback-based BGP peering,
+- OSPF reachability and administrative-distance tuning,
+- Local Preference path control,
+- AS-Path prepend,
+- localized policy on LDN1 and LDN2,
+- verified DC and Cyber2 return-path selection,
+- bidirectional 100% sourced ping validation,
+- implementation troubleshooting and final-state evidence.
 
 ## Evidence Policy
 
