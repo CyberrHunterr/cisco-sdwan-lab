@@ -71,7 +71,7 @@ Open [phase-4-vedge-onboarding/](phase-4-vedge-onboarding/) for:
 - chassis and serial registration,
 - live controller-connection verification,
 - OMP peer verification,
-- preserved raw vEdge and vSmart CLI evidence.
+- preserved vEdge and vSmart CLI evidence.
 
 ## Phase 5 — MPLS Transport Bring-Up
 
@@ -133,7 +133,7 @@ Open [phase-9-service-vpn-ospf/](phase-9-service-vpn-ospf/) for:
 - Phase 8 VRRP/DHCP continuity checks,
 - Cyber2 return-path correction,
 - successful Paris → Cyber2 sourced ping verification,
-- selected GUI/CLI screenshot evidence and transcriptions.
+- selected image and CLI evidence.
 
 ## Evidence Policy
 
@@ -143,10 +143,10 @@ Each phase therefore separates:
 
 1. phase-specific configuration and workflow,
 2. summarized/normalized verification,
-3. preserved raw CLI evidence under `verification/raw/` where available,
+3. preserved CLI evidence under `verification/cli-evidence/`,
 4. later-phase state that must be excluded from that phase's acceptance criteria.
 
-Raw evidence is never invented. If an original terminal capture was not preserved as text, the repository keeps the available historical report or exact preserved excerpt instead of recreating a fake CLI output.
+CLI evidence is never fabricated. If an original terminal capture was not preserved as text, the repository keeps the available historical report or exact preserved excerpt instead of recreating a fake CLI output.
 
 Secrets, password hashes, private keys and other sensitive authentication material are intentionally excluded from the public repository.
 
