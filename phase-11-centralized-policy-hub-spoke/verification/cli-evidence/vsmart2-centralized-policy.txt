@@ -1,0 +1,53 @@
+vSmart2 — PHASE 11 FINAL EVIDENCE
+
+Control connections
+-------------------
+Controller and vEdge DTLS sessions were observed UP.
+
+Centralized policy
+------------------
+vSmart2# show running-config policy
+
+policy
+ lists
+  site-list HO-HUB
+   site-id 1
+  !
+  site-list PRS-DRC-SPOKE
+   site-id 20
+   site-id 50
+  !
+  vpn-list VPN1
+   vpn 1
+  !
+  tloc-list HUB-HO-TLOC
+   tloc 55.55.55.1 color mpls encap ipsec
+  !
+ !
+ control-policy HS-PRS-DRC
+  sequence 10
+   match route
+    site-list PRS-DRC-SPOKE
+   !
+   action accept
+  !
+  sequence 20
+   match tloc
+    site-list HO-HUB
+   !
+   action accept
+  !
+  default-action reject
+ !
+!
+
+vSmart2# show running-config apply-policy
+
+apply-policy
+ site-list PRS-DRC-SPOKE
+  control-policy HS-PRS-DRC out
+ !
+ site-list HO-HUB
+  control-policy HS-PRS-DRC out
+ !
+!
