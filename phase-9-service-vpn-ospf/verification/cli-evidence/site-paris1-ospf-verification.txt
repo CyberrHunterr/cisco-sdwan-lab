@@ -1,6 +1,4 @@
-SOURCE: Phase 9 WG3 report screenshots
 DEVICE: SITE-PARIS1
-TRANSCRIPTION TYPE: Screenshot transcription — not original terminal capture
 
 === Interface / OSPF setup evidence ===
 
