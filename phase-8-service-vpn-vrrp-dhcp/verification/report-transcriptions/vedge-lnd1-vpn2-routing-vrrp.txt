@@ -1,0 +1,55 @@
+SOURCE: Phase 8 project report screenshots, pages 3-4
+DEVICE: vEdge-LDN1
+ROLE: London reference/example
+TRANSCRIPTION TYPE: Screenshot transcription — not original terminal capture
+
+Visible design values:
+- VRRP group: 1
+- Virtual IP: 172.16.42.254
+- LAN block: 172.16.42.0/24
+- vEdge-LDN1 ge0/3: 172.16.42.3
+- LAN next-hop / SW: 172.16.42.1
+- vEdge-LDN2 ge0/2: 172.16.42.2
+- LDN1 priority: 110
+- LDN2 priority: 100
+
+Visible configuration excerpt:
+
+vpn 2
+ interface ge0/3
+  ip address 172.16.42.3/24
+  no shutdown
+ !
+ ip route 192.168.46.0/24 172.16.42.1
+ ip route 192.168.47.0/24 172.16.42.1
+ ip route 192.168.48.0/24 172.16.42.1
+ omp
+  advertise connected
+  advertise static
+ !
+!
+
+Visible show ip route vpn 2 entries:
+
+VPN  PREFIX             PROTOCOL    IF NAME   NEXTHOP ADDR   STATUS
+2    172.16.42.0/24     connected   ge0/3     -              F,S
+2    192.168.46.0/24    static      ge0/3     172.16.42.1    F,S
+2    192.168.47.0/24    static      ge0/3     172.16.42.1    F,S
+2    192.168.48.0/24    static      ge0/3     172.16.42.1    F,S
+
+Visible VRRP configuration sequence:
+
+config
+vpn 2
+ interface ge0/3
+  vrrp 1
+   priority 110
+   track-omp
+   ipv4 172.16.42.254
+  !
+ !
+!
+commit
+
+NOTE:
+The screenshots are cropped. No unseen command/output lines have been inferred or added.
