@@ -40,9 +40,9 @@ See:
 
 - [verification/observed-vedge-state.md](verification/observed-vedge-state.md)
 - [verification/phase4-checklist.md](verification/phase4-checklist.md)
-- [verification/raw/](verification/raw/)
+- [verification/cli-evidence/](verification/cli-evidence/)
 
-## GUI evidence
+## Images
 
 ### vManage registration success
 
@@ -64,7 +64,7 @@ See:
 
 The current device state has progressed beyond Phase 4. In particular, the live VPN 0 configuration includes OSPF state introduced during **Phase 5**.
 
-That later configuration is preserved in raw evidence where it appeared, but it is **not** treated as a Phase 4 acceptance criterion.
+That later configuration is preserved in CLI evidence where it appeared, but it is **not** treated as a Phase 4 acceptance criterion.
 
 The Phase 4 configuration file therefore represents the onboarding baseline only:
 
