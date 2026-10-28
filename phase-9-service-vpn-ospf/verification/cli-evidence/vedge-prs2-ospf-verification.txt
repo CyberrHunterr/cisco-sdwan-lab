@@ -1,8 +1,5 @@
-SOURCE: Phase 9 WG3 report screenshots
 DEVICE: vEdge-PRS2
 SYSTEM-IP: 55.55.55.51
-METHOD: vManage template-managed
-TRANSCRIPTION TYPE: Screenshot transcription — not original terminal capture
 
 === Running configuration evidence ===
 
