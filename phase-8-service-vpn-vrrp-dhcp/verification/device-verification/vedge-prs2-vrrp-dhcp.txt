@@ -1,0 +1,67 @@
+DEVICE: vEdge-PRS2
+SYSTEM-IP: 55.55.55.51
+METHOD: vManage Template
+
+PHASE 8 RELEVANT RUNNING CONFIG
+
+vpn 1
+ interface ge0/2
+  ip address 172.16.51.2/24
+  no shutdown
+  vrrp 50
+   priority 150
+   track-omp
+   ipv4 172.16.51.254
+  !
+  dhcp-server
+   address-pool 172.16.51.0/24
+   exclude 172.16.51.1 172.16.51.2 172.16.51.254 172.16.51.3
+   offer-time 600
+   lease-time 86400
+   admin-state up
+   options
+    default-gateway 172.16.51.254
+    dns-servers 8.8.8.8
+   !
+  !
+ !
+!
+
+show vrrp
+
+vpn 1 / ge0/2 / group 50
+virtual-ip: 172.16.51.254
+priority: 150
+real-priority: 150
+vrrp-state: backup
+omp-state: up
+advertisement-timer: 1
+primary-down-timer: 3
+
+show dhcp server / bindings
+
+VPN 1 ge0/2
+client MAC: aa:bb:cc:01:c0:00
+client IP: 172.16.51.69
+lease time: 1:00:00:00
+static binding: false
+host name: Router
+
+show control connections
+
+vSmart 55.55.10.3 / MPLS / UP
+vSmart 55.55.10.4 / MPLS / UP
+vSmart 55.55.10.3 / public-internet / UP
+vSmart 55.55.10.4 / public-internet / UP
+vManage 55.55.10.1 / MPLS / UP
+
+show bfd sessions — verified rows
+
+55.55.55.30 / UP
+55.55.55.40 / UP
+55.55.55.41 / UP
+
+All BFD rows shown in this capture are UP.
+
+NOTE:
+Current VPN 1 running configuration also contains routing state from later work. It is excluded from Phase 8 acceptance.
