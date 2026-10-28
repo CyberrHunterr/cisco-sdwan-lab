@@ -1,0 +1,70 @@
+SOURCE: Phase 9 WG3 report screenshots
+DEVICE: vEdge-PRS2
+SYSTEM-IP: 55.55.55.51
+METHOD: vManage template-managed
+TRANSCRIPTION TYPE: Screenshot transcription — not original terminal capture
+
+=== Running configuration evidence ===
+
+show running-config vpn 1
+
+Readable Phase 9 OSPF block:
+
+vpn 1
+ router
+  ospf
+   router-id 55.55.55.51
+   default-information originate
+   timers spf 200 1000 10000
+   redistribute omp
+   area 0
+    interface ge0/2
+     cost 6
+    exit
+   exit
+  !
+ !
+
+Existing Phase 8 state visible in same screenshot:
+
+interface ge0/2
+ ip address 172.16.51.2/24
+ no shutdown
+ vrrp 50
+  priority 150
+  track-omp
+  ipv4 172.16.51.254
+ !
+ dhcp-server
+  address-pool 172.16.51.0/24
+  exclude 172.16.51.1 172.16.51.2 172.16.51.254 172.16.51.3
+  offer-time 600
+  lease-time 86400
+  admin-state up
+  options
+   default-gateway 172.16.51.254
+   dns-servers 8.8.8.8
+  !
+ !
+!
+
+=== OSPF neighbor evidence ===
+
+show ospf neighbor
+
+Readable VPN 1 neighbors:
+172.16.51.1   ge0/2   router-id 55.55.55.50    full
+172.16.51.69  ge0/2   router-id 50.50.50.100  full
+
+=== VPN 1 route evidence ===
+
+The report route-table screenshot shows these Paris LAN prefixes learned through OSPF:
+
+192.168.51.0/24  ospf  IA  ge0/2  172.16.51.69  F,S
+192.168.52.0/24  ospf  IA  ge0/2  172.16.51.69  F,S
+192.168.53.0/24  ospf  IA  ge0/2  172.16.51.69  F,S
+
+The same table also contains remote OMP routes and some older static route state unrelated to the core Paris OSPF acceptance criterion.
+
+NOTE:
+Only clearly readable Phase 9-relevant values are included.
