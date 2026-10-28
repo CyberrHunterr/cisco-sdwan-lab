@@ -30,7 +30,7 @@ The repository is organized by phase. Each phase separates:
 
 ## Phase 1 — Underlay Infrastructure
 
-Open [phase-1-underlay/](phase-1-underlay/) for:
+Open [phase-01-underlay/](phase-01-underlay/) for:
 
 - underlay design,
 - PE Router configuration,
@@ -42,7 +42,7 @@ Open [phase-1-underlay/](phase-1-underlay/) for:
 
 ## Phase 2 — Controller Deployment
 
-Open [phase-2-controllers/](phase-2-controllers/) for:
+Open [phase-02-controllers/](phase-02-controllers/) for:
 
 - vBond deployment,
 - vSmart1 and vSmart2 deployment,
@@ -53,7 +53,7 @@ Open [phase-2-controllers/](phase-2-controllers/) for:
 
 ## Phase 3 — PKI and Controller Onboarding
 
-Open [phase-3-pki-controller-onboarding/](phase-3-pki-controller-onboarding/) for:
+Open [phase-03-pki-controller-onboarding/](phase-03-pki-controller-onboarding/) for:
 
 - IOS Root CA configuration,
 - enterprise root certificate distribution,
@@ -65,7 +65,7 @@ Open [phase-3-pki-controller-onboarding/](phase-3-pki-controller-onboarding/) fo
 
 ## Phase 4 — vEdge Certificate Installation and Onboarding
 
-Open [phase-4-vedge-onboarding/](phase-4-vedge-onboarding/) for:
+Open [phase-04-vedge-onboarding/](phase-04-vedge-onboarding/) for:
 
 - vEdge system and transport baseline,
 - Root CA installation,
@@ -77,7 +77,7 @@ Open [phase-4-vedge-onboarding/](phase-4-vedge-onboarding/) for:
 
 ## Phase 5 — MPLS Transport Bring-Up
 
-Open [phase-5-mpls-transport-bring-up/](phase-5-mpls-transport-bring-up/) for:
+Open [phase-05-mpls-transport-bring-up/](phase-05-mpls-transport-bring-up/) for:
 
 - MPLS-side OSPF extension,
 - Internet Router ↔ MPLS-P3 interconnect,
@@ -86,7 +86,7 @@ Open [phase-5-mpls-transport-bring-up/](phase-5-mpls-transport-bring-up/) for:
 
 ## Phase 6 — vManage Template Management
 
-Open [phase-6-vmanage-template-management/](phase-6-vmanage-template-management/) for:
+Open [phase-06-vmanage-template-management/](phase-06-vmanage-template-management/) for:
 
 - System/AAA/BFD/OMP/Security Feature Templates,
 - VPN 0, MPLS, Internet, OSPF and VPN 512 templates,
@@ -96,7 +96,7 @@ Open [phase-6-vmanage-template-management/](phase-6-vmanage-template-management/
 
 ## Phase 7 — Service VPN Connected & Static Routes
 
-Open [phase-7-service-vpn-connected-static/](phase-7-service-vpn-connected-static/) for:
+Open [phase-07-service-vpn-connected-static/](phase-07-service-vpn-connected-static/) for:
 
 - VPN 1 connected routing,
 - VPN 1 static routing,
@@ -111,7 +111,7 @@ Open [phase-7-service-vpn-connected-static/](phase-7-service-vpn-connected-stati
 
 ## Phase 8 — Service VPN: VRRP & DHCP
 
-Open [phase-8-service-vpn-vrrp-dhcp/](phase-8-service-vpn-vrrp-dhcp/) for:
+Open [phase-08-service-vpn-vrrp-dhcp/](phase-08-service-vpn-vrrp-dhcp/) for:
 
 - Paris branch VPN 1 gateway redundancy,
 - PRS1 CLI-based VRRP and DHCP,
@@ -123,7 +123,7 @@ Open [phase-8-service-vpn-vrrp-dhcp/](phase-8-service-vpn-vrrp-dhcp/) for:
 
 ## Phase 9 — Service VPN: OSPF
 
-Open [phase-9-service-vpn-ospf/](phase-9-service-vpn-ospf/) for:
+Open [phase-09-service-vpn-ospf/](phase-09-service-vpn-ospf/) for:
 
 - SITE-PARIS1 LAN-facing OSPF,
 - PRS1 CLI-based VPN 1 OSPF,
@@ -186,4 +186,4 @@ Secrets, password hashes, private keys and other sensitive authentication materi
 
 ## Topology
 
-Full lab topology is available at [phase-1-underlay/topology/full-lab-topology.png](phase-1-underlay/topology/full-lab-topology.png).
+Full lab topology is available at [phase-01-underlay/topology/full-lab-topology.png](phase-01-underlay/topology/full-lab-topology.png).
