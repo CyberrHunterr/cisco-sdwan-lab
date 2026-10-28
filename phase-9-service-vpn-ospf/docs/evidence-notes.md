@@ -1,14 +1,16 @@
 # Phase 9 Evidence Notes
 
-## Source handling
+## Evidence handling
 
-The Phase 9 working report contains many embedded screenshots. Only screenshots that materially support Phase 9 acceptance are retained as image evidence.
+Only evidence that materially supports Phase 9 acceptance is retained.
 
-Terminal values that were readable in the report were also transcribed into text under:
+CLI verification is stored under:
 
-`verification/report-transcriptions/`
+`verification/cli-evidence/`
 
-These text files are explicitly labeled **screenshot transcription** and must not be treated as original raw CLI captures.
+Selected screenshots are stored under:
+
+`verification/images/`
 
 ## Key evidence chain
 
