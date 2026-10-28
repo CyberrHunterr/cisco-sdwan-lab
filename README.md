@@ -99,11 +99,12 @@ Open [phase-7-service-vpn-connected-static/](phase-7-service-vpn-connected-stati
 - VPN 1 static routing,
 - CLI-managed Cyber2 configuration,
 - vManage-template-managed DCI configuration,
+- Feature Template and Device Template evidence,
+- Config Diff and push-success verification,
 - OMP propagation,
 - VPN-aware ping/traceroute verification,
+- post-push CLI and route-table evidence,
 - CLI vs Template comparison.
-
-GUI screenshots for the Phase 7 template workflow may be added later as supplemental evidence; the preserved CLI and routing evidence already validates the operational result.
 
 ## Phase 8 — Service VPN: VRRP & DHCP
 
