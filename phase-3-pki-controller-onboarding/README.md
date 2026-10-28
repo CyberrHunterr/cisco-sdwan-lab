@@ -108,9 +108,9 @@ Detailed evidence:
 
 ➡️ [verification/observed-controller-state.md](verification/observed-controller-state.md)
 
-Raw CLI captures:
+CLI evidence:
 
-➡️ [verification/raw/](verification/raw/)
+➡️ [verification/cli-evidence/](verification/cli-evidence/)
 
 Completion checklist:
 
