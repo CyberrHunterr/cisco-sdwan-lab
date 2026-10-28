@@ -1,6 +1,3 @@
-SOURCE: Phase 9 WG3 report screenshots
-PURPOSE: Verify Phase 8 VRRP/DHCP state survived Phase 9 OSPF changes
-TRANSCRIPTION TYPE: Screenshot transcription — not original terminal capture
 
 === vEdge-PRS1 ===
 
