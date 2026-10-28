@@ -1,0 +1,23 @@
+vEdge-HO — PHASE 11 FINAL EVIDENCE
+
+vEdge-HO# show running-config vpn 1
+
+vpn 1
+ ip route 0.0.0.0/0 null0
+ omp
+  advertise static
+ !
+!
+
+vEdge-HO# show ip routes vpn 1
+
+0.0.0.0/0
+  protocol static
+  nexthop null0
+  status F,S
+
+vEdge-HO# show omp routes vpn 1 advertised
+
+0.0.0.0/0
+  origin-proto static
+  advertised
