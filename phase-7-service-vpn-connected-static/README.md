@@ -54,7 +54,7 @@ DCI → Cyber2:
 
 Both traceroutes reached the remote VPN 1 interface in one hop.
 
-## GUI Evidence
+## Images
 
 ### VPN 1 Service Feature Template
 
@@ -122,8 +122,8 @@ The live VPN 1 route table confirms the local DCI connected network and remote C
 
 ## Evidence
 
-- [verification/device-verification/vedge-drc-cyber2-vpn1.txt](verification/device-verification/vedge-drc-cyber2-vpn1.txt)
-- [verification/device-verification/vedge-dc-dci-vpn1.txt](verification/device-verification/vedge-dc-dci-vpn1.txt)
+- [verification/cli-evidence/vedge-drc-cyber2-vpn1.txt](verification/cli-evidence/vedge-drc-cyber2-vpn1.txt)
+- [verification/cli-evidence/vedge-dc-dci-vpn1.txt](verification/cli-evidence/vedge-dc-dci-vpn1.txt)
 - [verification/phase7-checklist.md](verification/phase7-checklist.md)
 - [verification/images/](verification/images/)
 - [docs/cli-vs-template-comparison.md](docs/cli-vs-template-comparison.md)
